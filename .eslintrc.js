@@ -20,9 +20,11 @@ module.exports = {
   rules: {
     '@typescript-eslint/strict-boolean-expressions': 0,
     '@typescript-eslint/prefer-nullish-coalescing': 0,
+    '@typescript-eslint/consistent-type-assertions': 0,
     '@typescript-eslint/no-floating-promises': 1,
     '@typescript-eslint/explicit-function-return-type': 1,
     'react/react-in-jsx-scope': 0,
+    'react/display-name': 1,
     'no-tabs': 0,
     'i18next/no-literal-string': ['error', { markupOnly: true, ignoreAttribute: ['data-testid', 'to'] }]
   },

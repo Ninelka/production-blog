@@ -23,11 +23,14 @@ module.exports = {
     'react/prop-types': 0,
     'react/display-name': 1,
     'no-tabs': 0,
-    'i18next/no-literal-string': ['error', { markupOnly: true, ignoreAttribute: ['data-testid', 'to'] }]
+    'i18next/no-literal-string': ['error', { markupOnly: true, ignoreAttribute: ['data-testid', 'to'] }],
+    'react-hooks/rules-of-hooks': "error",
+    'react-hooks/exhaustive-deps': "error"
   },
   plugins: [
     'react',
-    'i18next'
+    'i18next',
+    'react-hooks'
   ],
   globals: {
     __IS_DEV__: true

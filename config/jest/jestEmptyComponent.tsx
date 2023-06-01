@@ -1,3 +1,5 @@
-const jestEmptyComponent = () => 'div'
+import React from 'react'
 
-export default jestEmptyComponent()
+const jestEmptyComponent = () => <div/>
+
+export default jestEmptyComponent

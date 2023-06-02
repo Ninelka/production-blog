@@ -1,4 +1,4 @@
-import { type DeepPartial } from 'redux'
+import { type DeepPartial } from '@reduxjs/toolkit'
 import { type StateSchema } from 'app/providers/StoreProvider'
 import { getCounter } from './getCounter'
 

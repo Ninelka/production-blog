@@ -18,7 +18,7 @@ module.exports = {
     '@typescript-eslint/prefer-nullish-coalescing': 0,
     '@typescript-eslint/consistent-type-assertions': 0,
     '@typescript-eslint/no-floating-promises': 1,
-    '@typescript-eslint/explicit-function-return-type': 1,
+    '@typescript-eslint/explicit-function-return-type': 0,
     'react/react-in-jsx-scope': 0,
     'react/prop-types': 0,
     'react/display-name': 1,

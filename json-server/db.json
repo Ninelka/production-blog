@@ -25,5 +25,14 @@
       "password": "123"
     }
   ],
-  "profile": { "name": "typicode" }
+  "profile": {
+    "first": "John",
+    "lastname": "Dow",
+    "age": "32",
+    "currency": "RUB",
+    "country": "Russia",
+    "city": "Yekaterinburg",
+    "username": "admin",
+    "avatar": "https://w7.pngwing.com/pngs/529/832/png-transparent-computer-icons-avatar-user-profile-avatar.png"
+  }
 }

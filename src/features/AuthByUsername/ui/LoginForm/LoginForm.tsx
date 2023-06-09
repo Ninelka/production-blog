@@ -78,3 +78,5 @@ const LoginForm = memo(({ className }: LoginFormProps) => {
 })
 
 export default LoginForm
+
+LoginForm.displayName = 'LoginForm'

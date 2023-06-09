@@ -46,3 +46,5 @@ export const Navbar: FC<NavbarProps> = memo(({ className }) => {
 		</div>
   )
 })
+
+Navbar.displayName = 'Navbar'

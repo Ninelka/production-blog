@@ -20,6 +20,7 @@ module.exports = {
     '@typescript-eslint/no-floating-promises': 1,
     '@typescript-eslint/explicit-function-return-type': 0,
     '@typescript-eslint/no-dynamic-delete': 1,
+    '@typescript-eslint/no-non-null-assertion': 1,
     'react/react-in-jsx-scope': 0,
     'react/prop-types': 0,
     'react/display-name': 1,
@@ -34,7 +35,8 @@ module.exports = {
     'react-hooks'
   ],
   globals: {
-    __IS_DEV__: true
+    __IS_DEV__: true,
+    __API__: true
   },
   overrides: [
     {

@@ -39,3 +39,5 @@ export const Sidebar: FC<SidebarProps> = memo(({ className }) => {
 		</div>
   )
 })
+
+Sidebar.displayName = 'Sidebar'

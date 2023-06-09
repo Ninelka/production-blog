@@ -18,3 +18,5 @@ export const ThemeSwitcher: FC<ThemeSwitcherProps> = memo(({ className }) => {
     </Button>
   )
 })
+
+ThemeSwitcher.displayName = 'ThemeSwitcher'

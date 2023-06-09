@@ -21,3 +21,5 @@ export const LangSwitcher: FC<LangSwitcherProps> = memo(({ className, short }) =
 		</Button>
   )
 })
+
+LangSwitcher.displayName = 'LangSwitcher'

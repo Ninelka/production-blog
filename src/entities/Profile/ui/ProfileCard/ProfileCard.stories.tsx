@@ -3,7 +3,6 @@ import { type ComponentMeta, type ComponentStory } from '@storybook/react'
 import { ProfileCard } from './ProfileCard'
 import { Country } from 'entities/Country'
 import { Currency } from 'entities/Currency'
-import avatar from 'shared/assets/tests/storybook.png'
 
 export default {
   title: 'entities/ProfileCard',
@@ -22,7 +21,7 @@ Primary.args = {
     first: 'asd',
     city: 'asf',
     currency: Currency.USD,
-    avatar
+    avatar: 'https://w7.pngwing.com/pngs/529/832/png-transparent-computer-icons-avatar-user-profile-avatar.png'
   }
 }
 

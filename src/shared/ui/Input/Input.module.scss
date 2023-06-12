@@ -1,3 +1,7 @@
+.InputWrapper {
+    display: flex;
+}
+
 .input {
     background: transparent;
     border: none;
@@ -8,4 +12,13 @@
     &:focus {
         outline: none;
     }
+}
+
+.placeholder {
+    flex-shrink: 0;
+    margin-right: 5px;
+}
+
+.readonly {
+    opacity: 0.7;
 }

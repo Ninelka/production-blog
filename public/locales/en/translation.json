@@ -7,6 +7,7 @@
   "Вызвать ошибку": "Throw an error",
   "Главная": "Main",
   "О сайте": "About",
+  "Профиль": "Profile",
   "Переключить": "Toggle",
   "Короткий язык": "En",
   "Войти": "Login",
@@ -16,5 +17,7 @@
   "Введите пароль": "Enter password",
   "Форма авторизации": "Authorization form",
   "Вы ввели неверный логин или пароль": "Incorrect username or password",
-  "Выйти": "Logout"
+  "Выйти": "Logout",
+  "Укажите валюту": "Select currency",
+  "Укажите страну": "Select country"
 }

@@ -1,7 +1,18 @@
 import { type ProfileSchema, ValidateProfileError } from '../types/profile'
 import { profileActions, profileReducer } from './profileSlice'
-import { data } from 'browserslist'
 import { updateProfileData } from 'entities/Profile'
+import { Country } from 'entities/Country'
+import { Currency } from 'entities/Currency'
+
+const data = {
+  username: 'admin',
+  age: 22,
+  country: Country.Ukraine,
+  lastname: 'ulbi tv',
+  first: 'asd',
+  city: 'asf',
+  currency: Currency.USD
+}
 
 describe('profileSlice.test', () => {
   test('test set readonly', () => {

@@ -3,13 +3,13 @@ import { type ThunkConfig } from 'app/providers/StoreProvider'
 import { type Profile } from '../../types/profile'
 
 // eslint-disable-next-line @typescript-eslint/no-invalid-void-type
-export const fetchProfileData = createAsyncThunk<Profile, void, ThunkConfig<string>>(
+export const fetchProfileData = createAsyncThunk<Profile, string, ThunkConfig<string>>(
   'profile/fetchProfileData',
-  async (_, thunkApi) => {
+  async (profileId, thunkApi) => {
     const { extra, rejectWithValue } = thunkApi
 
     try {
-      const response = await extra.api.get<Profile>('/profile')
+      const response = await extra.api.get<Profile>('/profile/' + profileId)
 
       if (!response.data) {
         throw new Error()

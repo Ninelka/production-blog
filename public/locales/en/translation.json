@@ -21,5 +21,7 @@
   "Выйти": "Logout",
   "Укажите валюту": "Select currency",
   "Укажите страну": "Select country",
-  "Комментарии отсутствуют": "No comments"
+  "Комментарии отсутствуют": "No comments",
+  "Введите текст комментария": "Enter your comment",
+  "Отправить": "Send"
 }

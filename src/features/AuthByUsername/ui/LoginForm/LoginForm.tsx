@@ -45,7 +45,7 @@ const LoginForm = memo(({ className }: LoginFormProps) => {
 
   return (
   // eslint-disable-next-line i18next/no-literal-string
-        <DynamicModuleLoader removeAfterUnmount reducers={initialReducers}>
+        <DynamicModuleLoader reducers={initialReducers}>
           <div className={classNames(cls.LoginForm, {}, [className])}>
             <Text title={t('Форма авторизации')}/>
             {error && <Text text={t('Вы ввели неверный логин или пароль')} theme={TextTheme.ERROR} />}

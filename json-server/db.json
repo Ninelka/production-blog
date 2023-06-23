@@ -118,14 +118,28 @@
       "avatar": "https://cdn-icons-png.flaticon.com/512/2058/2058328.png"
     }
   ],
-  "profile": {
-    "first": "jgh",
-    "lastname": "asf",
-    "age": 465,
-    "currency": "RUB",
-    "country": "Belarus",
-    "city": "Moscow",
-    "username": "admin213",
-    "avatar": "https://cdn-icons-png.flaticon.com/512/2058/2058328.png"
-  }
+  "profile": [
+    {
+      "id": "1",
+      "first": "jgh",
+      "lastname": "asf",
+      "age": 465,
+      "currency": "RUB",
+      "country": "Belarus",
+      "city": "Minsk",
+      "username": "admin213",
+      "avatar": "https://cdn-icons-png.flaticon.com/512/2058/2058328.png"
+    },
+    {
+      "id": "2",
+      "first": "John",
+      "lastname": "Dow",
+      "age": 23,
+      "currency": "RUB",
+      "country": "Russia",
+      "city": "Moscow",
+      "username": "John777",
+      "avatar": "https://www.nicepng.com/png/detail/137-1379898_anonymous-headshot-icon-user-png.png"
+    }
+  ]
 }

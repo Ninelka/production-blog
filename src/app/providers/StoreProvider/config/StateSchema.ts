@@ -9,6 +9,7 @@ import { type NavigateOptions } from 'react-router/dist/lib/context'
 import { type To } from 'react-router-dom'
 import { type ArticleDetailsSchema } from 'entities/Article'
 import { type ArticleDetailsCommentsSchema } from 'pages/ArticleDetailsPage'
+import { type AddNewCommentSchema } from 'features/AddNewComment'
 
 export interface StateSchema {
   counter: CounterSchema
@@ -19,6 +20,7 @@ export interface StateSchema {
   profile?: ProfileSchema
   articleDetails?: ArticleDetailsSchema
   articleDetailsComments?: ArticleDetailsCommentsSchema
+  addNewComment?: AddNewCommentSchema
 }
 
 export type StateSchemaKey = keyof StateSchema

@@ -54,3 +54,5 @@ const AddNewComment = memo(({ className, onSendComment }: AddNewCommentProps) =>
 })
 
 export default AddNewComment
+
+AddNewComment.displayName = 'AddNewComment'

@@ -35,3 +35,5 @@ export const CommentList = memo(({ className, comments, isLoading }: CommentList
     </div>
   )
 })
+
+CommentList.displayName = 'CommentList'

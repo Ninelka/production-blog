@@ -21,11 +21,11 @@ export const Sidebar: FC<SidebarProps> = memo(({ className }) => {
   }
 
   return (
-		<div data-testid="sidebar" className={classNames(cls.Sidebar, { [cls.collapsed]: collapsed }, [className])}>
+		<aside data-testid="sidebar" className={classNames(cls.Sidebar, { [cls.collapsed]: collapsed }, [className])}>
 			<Button data-testid="sidebar-toggle" onClick={onToggle} className={cls.collapseBtn} theme={ButtonVariant.BACKGROUND_INVERTED} square size={ButtonSize.L}>
               {collapsed ? '>' : '<'}
             </Button>
-          <div className={cls.items}>
+          <nav className={cls.items}>
             {sidebarItemsList.map((item) => (
               <SidebarItem
                 key={item.path}
@@ -33,12 +33,12 @@ export const Sidebar: FC<SidebarProps> = memo(({ className }) => {
                 collapsed={collapsed}
               />
             ))}
-          </div>
+          </nav>
 			<div className={cls.switchers}>
 				<ThemeSwitcher/>
 				<LangSwitcher short={collapsed}/>
 			</div>
-		</div>
+		</aside>
   )
 })
 

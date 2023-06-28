@@ -7,9 +7,7 @@ import RequireAuth from './RequireAuth'
 export const renderWithWrapper = (route: AppRoutesProps) => {
   const element = (
     <Suspense fallback={<PageLoader/>}>
-      <div className="page-wrapper">
-        {route.element}
-      </div>
+      {route.element}
     </Suspense>
   )
 

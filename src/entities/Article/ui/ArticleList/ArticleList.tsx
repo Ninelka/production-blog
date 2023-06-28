@@ -19,14 +19,6 @@ const getSkeletons = (view: ArticleView) => new Array(view === ArticleView.GRID 
 export const ArticleList = memo((props: ArticleListProps) => {
   const { className, articles, isLoading, view = ArticleView.GRID } = props
 
-  if (isLoading) {
-    return (
-      <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
-        {getSkeletons(view)}
-      </div>
-    )
-  }
-
   const renderArticle = (article: Article) => {
     return (
         <ArticleListItem key={article.id} article={article} view={view}/>
@@ -39,6 +31,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
           ? articles.map(renderArticle)
           : null
         }
+      {isLoading && getSkeletons(view)}
     </div>
   )
 })

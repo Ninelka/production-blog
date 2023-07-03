@@ -5,8 +5,6 @@ import { type CombinedState, type EnhancedStore, type Reducer, type ReducersMapO
 import { type AnyAction } from 'redux'
 import { type ProfileSchema } from 'entities/Profile'
 import { type AxiosInstance } from 'axios'
-import { type NavigateOptions } from 'react-router/dist/lib/context'
-import { type To } from 'react-router-dom'
 import { type ArticleDetailsSchema } from 'entities/Article'
 import { type ArticleDetailsCommentsSchema } from 'pages/ArticleDetailsPage'
 import { type AddNewCommentSchema } from 'features/AddNewComment'
@@ -40,7 +38,6 @@ export interface ReduxStoreWithManager extends EnhancedStore<StateSchema> {
 
 export interface ThunkExtraArg {
   api: AxiosInstance
-  navigate?: (to: To, options?: NavigateOptions) => void
 }
 
 export interface ThunkConfig<T> {

@@ -3,17 +3,13 @@ import { getUserAuthData } from 'entities/User'
 import { type ThunkConfig } from 'app/providers/StoreProvider'
 import { type Comment } from 'entities/Comment'
 import { getArticleDetailsData } from 'entities/Article'
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
-import {
-  fetchCommentsByArticleId
-} from '../../services/fetchCommentsByArticleId/fetchCommentsByArticleId'
+import { fetchCommentsByArticleId } from '../../services/fetchCommentsByArticleId/fetchCommentsByArticleId'
 
 // eslint-disable-next-line @typescript-eslint/no-invalid-void-type
 export const addCommentForArticle = createAsyncThunk<Comment, string, ThunkConfig<string>>(
   'articleDetails/addCommentForArticle',
   async (text, thunkApi) => {
-    const { extra, rejectWithValue, getState } = thunkApi
-    const dispatch = useAppDispatch()
+    const { extra, dispatch, rejectWithValue, getState } = thunkApi
     const userData = getUserAuthData(getState())
     const article = getArticleDetailsData(getState())
 
@@ -22,7 +18,7 @@ export const addCommentForArticle = createAsyncThunk<Comment, string, ThunkConfi
     }
 
     try {
-      const response = await extra.api.post<Comment>('/comment', {
+      const response = await extra.api.post<Comment>('/comments', {
         articleId: article.id,
         userId: userData.id,
         text

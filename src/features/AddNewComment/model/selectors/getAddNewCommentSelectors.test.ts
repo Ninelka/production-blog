@@ -22,6 +22,6 @@ describe('addNewCommentSlice.test', () => {
 
   test('should work with empty state', () => {
     const state: DeepPartial<StateSchema> = {}
-    expect(getAddNewCommentText(state as StateSchema)).toEqual(undefined)
+    expect(getAddNewCommentText(state as StateSchema)).toEqual('')
   })
 })

@@ -46,3 +46,5 @@ export const ArticleViewSelector = memo(({ className, view, onViewClick }: Artic
     </div>
   )
 })
+
+ArticleViewSelector.displayName = 'ArticleViewSelector'

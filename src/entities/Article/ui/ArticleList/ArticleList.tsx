@@ -1,5 +1,5 @@
 import { classNames } from 'shared/lib/classNames/classNames'
-import { memo } from 'react'
+import { type HTMLAttributeAnchorTarget, memo } from 'react'
 import cls from './ArticleList.module.scss'
 import { type Article, ArticleView } from '../../model/types/article'
 import { ArticleListItem } from '../../ui/ArticleListItem/ArticleListItem'
@@ -12,6 +12,7 @@ interface ArticleListProps {
   articles: Article[]
   isLoading?: boolean
   view?: ArticleView
+  target?: HTMLAttributeAnchorTarget
 }
 
 const getSkeletons = (view: ArticleView) => new Array(view === ArticleView.GRID ? 9 : 3).fill(0).map((item, index) => (
@@ -19,11 +20,11 @@ const getSkeletons = (view: ArticleView) => new Array(view === ArticleView.GRID 
 ))
 
 export const ArticleList = memo((props: ArticleListProps) => {
-  const { className, articles, isLoading, view = ArticleView.GRID } = props
+  const { className, articles, isLoading, view = ArticleView.GRID, target = ArticleView.GRID } = props
   const { t } = useTranslation()
   const renderArticle = (article: Article) => {
     return (
-        <ArticleListItem key={article.id} article={article} view={view}/>
+        <ArticleListItem key={article.id} article={article} view={view} target={target}/>
     )
   }
 

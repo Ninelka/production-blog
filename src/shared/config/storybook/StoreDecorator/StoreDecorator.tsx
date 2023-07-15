@@ -6,13 +6,15 @@ import { type ReducersList } from 'shared/lib/components/DynamicModuleLoader/Dyn
 import { articleDetailsReducer } from 'entities/Article/model/slice/articleDetailsSlice'
 import { addNewCommentReducer } from 'features/AddNewComment/model/slices/addNewCommentSlice'
 import { articleDetailsPageReducer } from 'pages/ArticleDetailsPage/model/slices'
+import { scrollSaveReducer } from 'features/ScrollSave'
 
 const defaultAsyncReducers: ReducersList = {
   loginForm: loginReducer,
   profile: profileReducer,
   articleDetails: articleDetailsReducer,
   addNewComment: addNewCommentReducer,
-  articleDetailsPage: articleDetailsPageReducer
+  articleDetailsPage: articleDetailsPageReducer,
+  scrollSave: scrollSaveReducer
 }
 
 // eslint-disable-next-line react/display-name

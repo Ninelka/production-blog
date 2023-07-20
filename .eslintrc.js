@@ -8,10 +8,11 @@ module.exports = {
     'standard-with-typescript',
     'plugin:i18next/recommended'
   ],
+  parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module',
-    project: ['./tsconfig.json']
+    project: 'tsconfig.eslint.json'
   },
   rules: {
     '@typescript-eslint/strict-boolean-expressions': 0,
@@ -26,13 +27,15 @@ module.exports = {
     'react/display-name': 1,
     'no-tabs': 0,
     'i18next/no-literal-string': ['error', { markupOnly: true, ignoreAttribute: ['data-testid', 'to', 'target'] }],
-    'react-hooks/rules-of-hooks': "error",
-    'react-hooks/exhaustive-deps': "error"
+    'react-hooks/rules-of-hooks': 'error',
+    'react-hooks/exhaustive-deps': 'error',
+    'fsd-path-checker-plugin/path-checker': 'error'
   },
   plugins: [
     'react',
     'i18next',
-    'react-hooks'
+    'react-hooks',
+    'fsd-path-checker-plugin'
   ],
   globals: {
     __IS_DEV__: true,
@@ -44,7 +47,7 @@ module.exports = {
       files: ['**/src/**/*.test.{ts,tsx}'],
       rules: {
         'i18next/no-literal-string': 0
-      },
+      }
     }
   ]
 }

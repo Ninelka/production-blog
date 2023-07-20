@@ -23,3 +23,5 @@ const ArticleEditPage = memo(({ className }: ArticleEditPageProps) => {
 })
 
 export default ArticleEditPage
+
+ArticleEditPage.displayName = 'ArticleEditPage'

@@ -30,10 +30,10 @@ export const Sidebar: FC<SidebarProps> = memo(({ className }) => {
 
   return (
 		<aside data-testid="sidebar" className={classNames(cls.Sidebar, { [cls.collapsed]: collapsed }, [className])}>
-			<Button data-testid="sidebar-toggle" onClick={onToggle} className={cls.collapseBtn} theme={ButtonVariant.BACKGROUND_INVERTED} square size={ButtonSize.L}>
-              {collapsed ? '>' : '<'}
-            </Button>
-          <VStack gap="8" className={cls.items}>
+          <Button data-testid="sidebar-toggle" onClick={onToggle} className={cls.collapseBtn} theme={ButtonVariant.BACKGROUND_INVERTED} square size={ButtonSize.L}>
+            {collapsed ? '>' : '<'}
+          </Button>
+          <VStack gap="16" className={cls.items}>
             {sidebarItemsList.map((item) => (
               <SidebarItem
                 key={item.path}

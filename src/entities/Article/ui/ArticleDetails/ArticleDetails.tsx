@@ -62,7 +62,7 @@ export const ArticleDetails = memo(({ className, id }: ArticleDetailsProps) => {
 
   if (isLoading) {
     content = (
-      <VStack max gap={'8'}>
+      <VStack max gap={'16'}>
         <HStack max justify={'center'}>
           <Skeleton className={cls.avatar} width={200} height={200} border="50%" />
         </HStack>
@@ -74,7 +74,9 @@ export const ArticleDetails = memo(({ className, id }: ArticleDetailsProps) => {
     )
   } else if (error) {
     content = (
-      <Text align={TextAlign.CENTER} text={t('Произошла ошибка при загрузке статьи')}/>
+      <VStack max align={'center'}>
+        <Text align={TextAlign.CENTER} text={t('Произошла ошибка при загрузке статьи')}/>
+      </VStack>
     )
   } else {
     content = (

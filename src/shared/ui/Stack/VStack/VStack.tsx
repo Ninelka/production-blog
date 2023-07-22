@@ -1,6 +1,6 @@
 import { Flex, type FlexProps } from '../Flex/Flex'
 
-type VStackProps = Omit<FlexProps, 'direction'>
+type VStackProps = Omit<FlexProps, 'direction' | 'ref'>
 
 export const VStack = (props: VStackProps) => {
   const { align = 'start' } = props

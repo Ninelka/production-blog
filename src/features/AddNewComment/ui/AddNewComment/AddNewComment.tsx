@@ -9,6 +9,7 @@ import { getAddNewCommentError, getAddNewCommentText } from '../../model/selecto
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
 import { addNewCommentActions, addNewCommentReducer } from '../../model/slices/addNewCommentSlice'
 import { DynamicModuleLoader, type ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
+import { HStack } from 'shared/ui/Stack'
 
 export interface AddNewCommentProps {
   className?: string
@@ -40,7 +41,7 @@ const AddNewComment = memo(({ className, onSendComment }: AddNewCommentProps) =>
 
   return (
     <DynamicModuleLoader reducers={reducers}>
-      <div className={classNames(cls.AddNewComment, {}, [className])}>
+      <HStack max justify={'between'} className={classNames(cls.AddNewComment, {}, [className])}>
         <Input
           placeholder={t('Введите текст комментария')}
           value={text}
@@ -48,7 +49,7 @@ const AddNewComment = memo(({ className, onSendComment }: AddNewCommentProps) =>
           className={cls.input}
         />
         <Button onClick={onSendHandler}>{t('Отправить')}</Button>
-      </div>
+      </HStack>
     </DynamicModuleLoader>
   )
 })

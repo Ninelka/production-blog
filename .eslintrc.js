@@ -26,7 +26,13 @@ module.exports = {
     'react/prop-types': 0,
     'react/display-name': 1,
     'no-tabs': 0,
-    'i18next/no-literal-string': ['error', { markupOnly: true, ignoreAttribute: ['data-testid', 'to', 'target'] }],
+    'i18next/no-literal-string': [
+      'error',
+      {
+        markupOnly: true,
+        ignoreAttribute: ['data-testid', 'to', 'target', 'justify', 'align', 'direction', 'gap']
+      }
+    ],
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'error',
     'fsd-path-checker-plugin/path-checker': 'error'

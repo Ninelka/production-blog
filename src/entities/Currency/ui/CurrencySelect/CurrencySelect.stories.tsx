@@ -5,7 +5,10 @@ import { Currency } from '../..'
 
 export default {
   title: 'entities/CurrencySelect',
-  component: CurrencySelect
+  component: CurrencySelect,
+  decorators: [
+    Story => <div style={{ padding: '150px' }}><Story/></div>
+  ]
 } as ComponentMeta<typeof CurrencySelect>
 
 const Template: ComponentStory<typeof CurrencySelect> = (args) => <CurrencySelect {...args} />

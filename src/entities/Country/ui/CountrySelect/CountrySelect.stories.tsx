@@ -5,7 +5,10 @@ import { Country } from '../..'
 
 export default {
   title: 'entities/CountrySelect',
-  component: CountrySelect
+  component: CountrySelect,
+  decorators: [
+    Story => <div style={{ padding: '150px' }}><Story/></div>
+  ]
 } as ComponentMeta<typeof CountrySelect>
 
 const Template: ComponentStory<typeof CountrySelect> = (args) => <CountrySelect {...args} />

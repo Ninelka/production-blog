@@ -15,5 +15,6 @@
   "Имя и фамилия обязательны": "name and lastname required",
   "Данные не указаны": "No data",
   "Серверная ошибка": "Server error",
-  "Некорректный регион": "Incorrect city"
+  "Некорректный регион": "Incorrect city",
+  "Профиль не найден": "Profile not found"
 }

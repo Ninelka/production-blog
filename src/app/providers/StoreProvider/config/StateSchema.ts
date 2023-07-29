@@ -3,18 +3,20 @@ import { type UserSchema } from 'entities/User'
 import { type LoginSchema } from 'features/AuthByUsername'
 import { type CombinedState, type EnhancedStore, type Reducer, type ReducersMapObject } from '@reduxjs/toolkit'
 import { type AnyAction } from 'redux'
-import { type ProfileSchema } from 'entities/Profile'
 import { type AxiosInstance } from 'axios'
 import { type ArticleDetailsSchema } from 'entities/Article'
 import { type AddNewCommentSchema } from 'features/AddNewComment'
 import { type ArticlesPageSchema } from 'pages/ArticlesPage'
 import { type ScrollSaveSchema } from 'features/ScrollSave'
 import { type ArticleDetailsPageSchema } from 'pages/ArticleDetailsPage/model/types'
+import { type rtkApi } from 'shared/api/rtkApi'
+import { type ProfileSchema } from 'features/EditableProfileCard'
 
 export interface StateSchema {
   counter: CounterSchema
   user: UserSchema
   scrollSave: ScrollSaveSchema
+  [rtkApi.reducerPath]: ReturnType<typeof rtkApi.reducer>
   // Асинхронные редюсеры
   loginForm?: LoginSchema
   profile?: ProfileSchema

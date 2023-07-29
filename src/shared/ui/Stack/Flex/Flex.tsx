@@ -65,3 +65,5 @@ export const Flex = memo((props: FlexProps) => {
     </div>
   )
 })
+
+Flex.displayName = 'Flex'

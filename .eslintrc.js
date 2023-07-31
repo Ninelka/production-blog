@@ -18,7 +18,7 @@ module.exports = {
     '@typescript-eslint/strict-boolean-expressions': 0,
     '@typescript-eslint/prefer-nullish-coalescing': 0,
     '@typescript-eslint/consistent-type-assertions': 0,
-    '@typescript-eslint/no-floating-promises': 1,
+    '@typescript-eslint/no-floating-promises': 0,
     '@typescript-eslint/explicit-function-return-type': 0,
     '@typescript-eslint/no-dynamic-delete': 1,
     '@typescript-eslint/no-non-null-assertion': 1,

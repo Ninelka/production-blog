@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next'
 import { memo, useMemo } from 'react'
 import cls from './ArticlesSortSelector.module.scss'
 import { Select, type SelectOption } from 'shared/ui/Select/Select'
-import { ArticleSortField } from 'entities/Article/model/types/article'
+import { ArticleSortField } from 'entities/Article'
 import { type SortOrder } from 'shared/types'
 
 interface ArticlesSortSelectorProps {

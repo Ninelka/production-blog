@@ -43,5 +43,7 @@
   "Создание новой статьи": "New article",
   "Редактирование статьи с ID = ": "Edit article with ID = ",
   "My blog": "My blog",
-  "Создать статью": "Create article"
+  "Создать статью": "Create article",
+  "Админ панель": "Admin panel",
+  "У вас нет доступа к этой странице": "You cannot access to this page"
 }

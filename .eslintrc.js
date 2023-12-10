@@ -36,15 +36,15 @@ module.exports = {
     ],
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'error',
-    'ulbi-tv-plugin/path-checker': 'error',
-    'fsd-path-checker-plugin/path-checker': 'error'
+    'ulbi-tv-plugin/path-checker': 'error'
+    // 'fsd-path-checker-plugin/path-checker': 'error'
   },
   plugins: [
     'react',
     'i18next',
     'react-hooks',
-    'ulbi-tv-plugin',
-    'fsd-path-checker-plugin'
+    'ulbi-tv-plugin'
+    // 'fsd-path-checker-plugin'
   ],
   globals: {
     __IS_DEV__: true,

@@ -18,20 +18,22 @@ export default ({ config }: { config: webpack.Configuration }) => {
 
   const rules = config.module?.rules as RuleSetRule[]
 
-  config.module!.rules = rules.map((rule: RuleSetRule) => {
-    if (rule.test instanceof RegExp && rule.test.toString().includes('svg')) {
-      return { ...rule, exclude: /\.svg$/i }
-    }
+  if (config.module) {
+    config.module.rules = rules.map((rule: RuleSetRule) => {
+      if (rule.test instanceof RegExp && rule.test.toString().includes('svg')) {
+        return { ...rule, exclude: /\.svg$/i }
+      }
 
-    return rule
-  })
+      return rule
+    })
 
-  config.module?.rules.push({
-    test: /\.svg$/,
-    use: ['@svgr/webpack']
-  })
+    config.module.rules.push({
+      test: /\.svg$/,
+      use: ['@svgr/webpack']
+    })
 
-  config.module?.rules.push(buildCssLoader(true))
+    config.module.rules.push(buildCssLoader(true))
+  }
 
   config.plugins?.push(new DefinePlugin({
     __IS_DEV__: JSON.stringify(true),

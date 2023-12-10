@@ -17,3 +17,5 @@ const ForbiddenPage = memo((props: AdminPanelPageProps) => {
 })
 
 export default ForbiddenPage
+
+ForbiddenPage.displayName = 'ForbiddenPage'

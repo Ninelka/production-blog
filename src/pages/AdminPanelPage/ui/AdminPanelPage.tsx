@@ -19,3 +19,5 @@ const AdminPanelPage = memo((props: AdminPanelPageProps) => {
 })
 
 export default AdminPanelPage
+
+AdminPanelPage.displayName = 'AdminPanelPage'

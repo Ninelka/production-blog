@@ -22,6 +22,7 @@ module.exports = {
     '@typescript-eslint/explicit-function-return-type': 0,
     '@typescript-eslint/no-dynamic-delete': 1,
     '@typescript-eslint/no-non-null-assertion': 1,
+    '@typescript-eslint/consistent-type-imports': 1,
     'react/react-in-jsx-scope': 0,
     'react/prop-types': 0,
     'react/display-name': 1,

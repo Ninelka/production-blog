@@ -9,7 +9,7 @@ const notificationApi = rtkApi.injectEndpoints({
       })
     })
   }),
-  overrideExisting: module.hot?.status() === 'apply'
+  overrideExisting: __IS_DEV__
 })
 
 export const useNotifications = notificationApi.useGetNotificationsQuery

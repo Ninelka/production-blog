@@ -2,7 +2,7 @@ import React from 'react'
 import { type ComponentMeta, type ComponentStory } from '@storybook/react'
 import { ArticleList } from './ArticleList'
 import { ArticleView } from '../../model/types/article'
-import { article } from 'shared/const/storybook'
+import { article } from '@/shared/const/storybook'
 
 export default {
   title: 'entities/Article/ArticleList',

@@ -1,7 +1,7 @@
 import React from 'react'
 import { type ComponentStory, type ComponentMeta } from '@storybook/react'
 import { CommentCard } from './CommentCard'
-import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator'
+import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator'
 
 export default {
   title: 'entities/Comment/CommentCard',

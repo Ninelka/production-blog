@@ -3,7 +3,7 @@ import { type ComponentMeta, type ComponentStory } from '@storybook/react'
 
 import { Text, TextSize, TextTheme } from './Text'
 import { ThemeDecorator } from '../../config/storybook/ThemeDecorator/ThemeDecorator'
-import { Theme } from 'app/providers/ThemeProvider'
+import { Theme } from '@/app/providers/ThemeProvider'
 
 export default {
   title: 'shared/Text',

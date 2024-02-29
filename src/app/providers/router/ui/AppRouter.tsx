@@ -1,6 +1,6 @@
 import React, { memo } from 'react'
 import { Routes } from 'react-router-dom'
-import { routeConfig } from 'shared/config/routeConfig/routeConfig'
+import { routeConfig } from '@/shared/config/routeConfig/routeConfig'
 import { renderWithWrapper } from './renderWithWrapper'
 
 const AppRouter = () => {

@@ -55,7 +55,8 @@
       "createdAt": "26.04.2022",
       "userId": "1",
       "type": [
-        "IT", "SCIENCE"
+        "IT",
+        "SCIENCE"
       ],
       "blocks": [
         {
@@ -582,21 +583,27 @@
       "id": "1",
       "username": "admin",
       "password": "123",
-      "roles": ["ADMIN"],
+      "roles": [
+        "ADMIN"
+      ],
       "avatar": "https://cdn-icons-png.flaticon.com/512/2058/2058328.png"
     },
     {
       "id": "2",
       "username": "user",
       "password": "123",
-      "roles": ["USER"],
+      "roles": [
+        "USER"
+      ],
       "avatar": "https://cdn-icons-png.flaticon.com/512/2058/2058328.png"
     },
     {
       "id": "3",
       "username": "manager",
       "password": "123",
-      "roles": ["MANAGER"],
+      "roles": [
+        "MANAGER"
+      ],
       "avatar": "https://cdn-icons-png.flaticon.com/512/2058/2058328.png"
     }
   ],
@@ -622,6 +629,38 @@
       "city": "Moscow",
       "username": "John777",
       "avatar": "https://www.nicepng.com/png/detail/137-1379898_anonymous-headshot-icon-user-png.png"
+    }
+  ],
+  "article-ratings": [
+    {
+      "id": "1",
+      "rate": 4,
+      "feedback": "Хорошая статья",
+      "userId": "1",
+      "articleId": "1"
+    },
+    {
+      "id": "2",
+      "rate": 4,
+      "feedback": "Хорошая статья",
+      "userId": "1",
+      "articleId": "2"
+    }
+  ],
+  "profile-ratings": [
+    {
+      "id": "1",
+      "rate": 4,
+      "feedback": "Интересный профиль",
+      "userId": "1",
+      "profileId": "1"
+    },
+    {
+      "id": "2",
+      "rate": 4,
+      "feedback": "Отличный профиль",
+      "userId": "1",
+      "profileId": "2"
     }
   ]
 }

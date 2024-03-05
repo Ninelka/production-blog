@@ -30,7 +30,8 @@ export const RatingCard = memo((props: RatingCardProps) => {
 
   const onSelectStars = useCallback((selectedStarsCount: number) => {
     setStarsCount(selectedStarsCount)
-    if (!hasFeedback) {
+
+    if (hasFeedback) {
       setIsModalOpen(true)
     } else {
       onAccept?.(selectedStarsCount)
@@ -55,9 +56,9 @@ export const RatingCard = memo((props: RatingCardProps) => {
   )
 
   return (
-    <Card className={className}>
+    <Card className={className} max>
         <VStack align={'center'} gap={'8'} max>
-            <Text title={title}/>
+            <Text title={ starsCount ? t('Спасибо за оценку!') : title}/>
             <StarRating selectedStars={starsCount} size={40} onSelect={onSelectStars}/>
         </VStack>
       {isMobile

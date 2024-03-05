@@ -12,7 +12,8 @@ const recommendationsApi = rtkApi.injectEndpoints({
       })
     })
   }),
-  overrideExisting: module.hot?.status() === 'apply'
+  // overrideExisting: module.hot?.status() === 'apply'
+  overrideExisting: __IS_DEV__
 })
 
 export const useArticleRecommendationsList = recommendationsApi.useGetArticleRecommendationsListQuery

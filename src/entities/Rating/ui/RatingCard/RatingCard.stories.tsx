@@ -15,7 +15,8 @@ export const WithFeedback = Template.bind({})
 Normal.args = {}
 WithTitle.args = {
   title: 'Ваш отзыв',
-  feedbackTitle: 'Оставьте ваш отзыв'
+  feedbackTitle: 'Оставьте ваш отзыв',
+  hasFeedback: true
 }
 WithFeedback.args = {
   title: 'Спасибо!',

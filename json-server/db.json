@@ -654,13 +654,6 @@
       "feedback": "Интересный профиль",
       "userId": "1",
       "profileId": "1"
-    },
-    {
-      "id": "2",
-      "rate": 4,
-      "feedback": "Отличный профиль",
-      "userId": "1",
-      "profileId": "2"
     }
   ]
 }

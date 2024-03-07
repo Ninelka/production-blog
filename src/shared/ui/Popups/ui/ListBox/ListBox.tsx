@@ -43,7 +43,7 @@ export function ListBox (props: ListBoxProps) {
     <HStack gap={'4'}>
       {label && <span>{label + '>'}</span>}
       <HListBox disabled={readonly} as={'div'} className={classNames(cls.ListBox, {}, [className, popupCls.popup])} value={value} onChange={onChange}>
-        <HListBox.Button className={popupCls.trigger}>
+        <HListBox.Button as="div" className={popupCls.trigger}>
           <Button disabled={readonly}>
             {value ?? defaultValue}
           </Button>

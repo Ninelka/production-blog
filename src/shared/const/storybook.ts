@@ -74,3 +74,19 @@ export const article: Article = {
     }
   ]
 }
+
+export const articleRatings = {
+  id: '1',
+  rate: 5,
+  feedback: 'Отличная статья',
+  userId: '1',
+  articleId: '1'
+}
+
+export const profileRatings = {
+  id: '1',
+  rate: 4,
+  feedback: 'Интересный профиль',
+  userId: '1',
+  profileId: '1'
+}

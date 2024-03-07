@@ -1,19 +1,19 @@
 import React from 'react'
 import { type ComponentMeta, type ComponentStory } from '@storybook/react'
-import ArticleRating from './ArticleRating'
+import ProfileRating from './ProfileRating'
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator'
+import { profileRatings } from '@/shared/const/storybook'
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator'
 import { Theme } from '@/app/providers/ThemeProvider'
-import { articleRatings } from '@/shared/const/storybook'
 import withMock from 'storybook-addon-mock'
 
 export default {
-  title: 'features/ArticleRating',
-  component: ArticleRating,
+  title: 'features/ProfileRating',
+  component: ProfileRating,
   decorators: [withMock]
-} as ComponentMeta<typeof ArticleRating>
+} as ComponentMeta<typeof ProfileRating>
 
-const Template: ComponentStory<typeof ArticleRating> = (args) => <ArticleRating {...args} />
+const Template: ComponentStory<typeof ProfileRating> = (args) => <ProfileRating {...args} />
 
 export const NormalWithoutRate = Template.bind({})
 NormalWithoutRate.args = {}
@@ -25,7 +25,7 @@ DarkWithoutRate.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({})]
 
 export const NormalWithRate = Template.bind({})
 NormalWithRate.args = {
-  articleId: '1'
+  profileId: '1'
 }
 NormalWithRate.decorators = [StoreDecorator({
   user: {
@@ -38,11 +38,11 @@ NormalWithRate.decorators = [StoreDecorator({
 NormalWithRate.parameters = {
   mockData: [
     {
-      url: __API__ + '/article-ratings?userId=1&articleId=1',
+      url: __API__ + '/profile-ratings?userId=1&profileId=1',
       method: 'GET',
       status: 200,
       response: [
-        { ...articleRatings }
+        { ...profileRatings }
       ]
     }
   ]
@@ -50,7 +50,7 @@ NormalWithRate.parameters = {
 
 export const DarkWithRate = Template.bind({})
 DarkWithRate.args = {
-  articleId: '1'
+  profileId: '1'
 }
 DarkWithRate.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({
   user: {

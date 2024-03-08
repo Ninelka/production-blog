@@ -32,3 +32,24 @@ Normal.parameters = {
     }
   ]
 }
+
+export const Loading = Template.bind({})
+Loading.args = {}
+Loading.decorators = [
+  StoreDecorator({})
+]
+Loading.parameters = {
+  mockData: [
+    {
+      url: __API__ + '/notifications',
+      method: 'GET',
+      status: 200,
+      response: [
+        { ...notification },
+        { ...notification, id: 2 },
+        { ...notification, id: 3 }
+      ],
+      delay: 50000
+    }
+  ]
+}

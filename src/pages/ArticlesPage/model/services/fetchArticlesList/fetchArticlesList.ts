@@ -10,7 +10,7 @@ import {
   getArticlesOrder,
   getArticlesSearch,
   getArticlesSort
-} from '@/features/ArticlesSortSelector/model/selectors/getArticlesSortSelectors'
+} from '@/features/ArticlesSortSelector'
 import { addQueryParams } from '@/shared/lib/url/addQueryParams/addQueryParams'
 
 interface FetchArticlesListProps {

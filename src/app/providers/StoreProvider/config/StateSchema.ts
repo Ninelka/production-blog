@@ -8,7 +8,7 @@ import { type ArticleDetailsSchema } from '@/entities/Article'
 import { type AddNewCommentSchema } from '@/features/AddNewComment'
 import { type ArticlesPageSchema } from '@/pages/ArticlesPage'
 import { type ScrollSaveSchema } from '@/features/ScrollSave'
-import { type ArticleDetailsPageSchema } from '@/pages/ArticleDetailsPage/model/types'
+import { type ArticleDetailsPageSchema } from '@/pages/ArticleDetailsPage'
 import { type rtkApi } from '@/shared/api/rtkApi'
 import { type ProfileSchema } from '@/features/EditableProfileCard'
 

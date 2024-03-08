@@ -2,23 +2,22 @@ import { classNames } from '@/shared/lib/classNames/classNames'
 import { useTranslation } from 'react-i18next'
 import { memo, useCallback } from 'react'
 import cls from './ArticlesPageFilters.module.scss'
-import { type ArticleSortField, type ArticleView, ArticleViewSelector } from '@/entities/Article'
+import { type ArticleSortField, type ArticleView, type ArticleType, ArticleViewSelector } from '@/entities/Article'
 import { acticlesPageActions } from '../../model/slices/articlesPageSlice'
 import { useSelector } from 'react-redux'
 import { getArticlesPageType, getArticlesPageView } from '../../model/selectors/articlesPageSelectors'
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch'
 import { Card } from '@/shared/ui/Card/Card'
 import { Input } from '@/shared/ui/Input/Input'
-import { ArticlesSortSelector } from '@/features/ArticlesSortSelector'
 import { type SortOrder } from '@/shared/types'
 import {
+  ArticlesSortSelector,
   getArticlesOrder,
   getArticlesSearch,
   getArticlesSort
-} from '@/features/ArticlesSortSelector/model/selectors/getArticlesSortSelectors'
+} from '@/features/ArticlesSortSelector'
 import { fetchArticlesList } from '../../model/services/fetchArticlesList/fetchArticlesList'
 import { useDebounce } from '@/shared/lib/hooks/useDebounce/useDebounce'
-import { type ArticleType } from '@/entities/Article/model/types/article'
 import { ArticleTypeTabs } from '@/features/ArticleTypeTabs'
 
 interface ArticlesPageFiltersProps {

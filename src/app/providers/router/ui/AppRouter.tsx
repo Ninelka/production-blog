@@ -1,7 +1,7 @@
 import React, { memo } from 'react'
 import { Routes } from 'react-router-dom'
-import { routeConfig } from '@/shared/config/routeConfig/routeConfig'
 import { renderWithWrapper } from './renderWithWrapper'
+import { routeConfig } from '@/app/providers/router/config/routerConfig'
 
 const AppRouter = () => {
   return (

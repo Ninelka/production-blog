@@ -36,8 +36,8 @@ module.exports = {
     ],
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'error',
-    'ulbi-tv-plugin/path-checker': 'error'
-    // 'fsd-path-checker-plugin/path-checker': 'error'
+    'ulbi-tv-plugin/path-checker': ['error', { alias: '@' }],
+    // 'fsd-path-checker-plugin/path-checker': ['error', { alias: '@' }]
   },
   plugins: [
     'react',

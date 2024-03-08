@@ -90,3 +90,9 @@ export const profileRatings = {
   userId: '1',
   profileId: '1'
 }
+
+export const notification = {
+  id: '1',
+  title: 'Уведомление',
+  description: 'Поставь лайк и оставь комментарий'
+}

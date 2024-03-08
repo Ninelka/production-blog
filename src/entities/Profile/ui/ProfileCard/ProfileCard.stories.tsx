@@ -5,7 +5,7 @@ import { Country } from '@/entities/Country'
 import { Currency } from '@/entities/Currency'
 
 export default {
-  title: 'entities/ProfileCard',
+  title: 'entities/Profile/ProfileCard',
   component: ProfileCard
 } as ComponentMeta<typeof ProfileCard>
 

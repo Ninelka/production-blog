@@ -1,4 +1,5 @@
 import { type StateSchema } from '@/app/providers/StoreProvider'
+
 import { getArticleDetailsData, getArticleDetailsIsLoading, getArticleDetailsError } from './articleDetails'
 
 describe('articleDetails.test', () => {

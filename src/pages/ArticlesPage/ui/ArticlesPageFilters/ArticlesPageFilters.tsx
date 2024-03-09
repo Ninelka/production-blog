@@ -1,24 +1,27 @@
-import { classNames } from '@/shared/lib/classNames/classNames'
-import { useTranslation } from 'react-i18next'
 import { memo, useCallback } from 'react'
-import cls from './ArticlesPageFilters.module.scss'
-import { type ArticleSortField, type ArticleView, type ArticleType, ArticleViewSelector } from '@/entities/Article'
-import { acticlesPageActions } from '../../model/slices/articlesPageSlice'
+
+import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
-import { getArticlesPageType, getArticlesPageView } from '../../model/selectors/articlesPageSelectors'
-import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch'
-import { Card } from '@/shared/ui/Card'
-import { Input } from '@/shared/ui/Input'
-import { type SortOrder } from '@/shared/types'
+
+import { type ArticleSortField, type ArticleView, type ArticleType, ArticleViewSelector } from '@/entities/Article'
 import {
   ArticlesSortSelector,
   getArticlesOrder,
   getArticlesSearch,
   getArticlesSort
 } from '@/features/ArticlesSortSelector'
-import { fetchArticlesList } from '../../model/services/fetchArticlesList/fetchArticlesList'
-import { useDebounce } from '@/shared/lib/hooks/useDebounce/useDebounce'
 import { ArticleTypeTabs } from '@/features/ArticleTypeTabs'
+import { classNames } from '@/shared/lib/classNames/classNames'
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch'
+import { useDebounce } from '@/shared/lib/hooks/useDebounce/useDebounce'
+import { type SortOrder } from '@/shared/types'
+import { Card } from '@/shared/ui/Card'
+import { Input } from '@/shared/ui/Input'
+
+import cls from './ArticlesPageFilters.module.scss'
+import { getArticlesPageType, getArticlesPageView } from '../../model/selectors/articlesPageSelectors'
+import { fetchArticlesList } from '../../model/services/fetchArticlesList/fetchArticlesList'
+import { acticlesPageActions } from '../../model/slices/articlesPageSlice'
 
 interface ArticlesPageFiltersProps {
   className?: string

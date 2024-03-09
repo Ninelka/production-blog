@@ -1,5 +1,7 @@
 import React from 'react'
+
 import { type ComponentMeta, type ComponentStory } from '@storybook/react'
+
 import { ArticleListItem } from './ArticleListItem'
 import { type Article, ArticleView, ArticleType } from '../../model/types/article'
 

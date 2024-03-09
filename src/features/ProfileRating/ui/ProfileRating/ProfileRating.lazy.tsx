@@ -1,5 +1,7 @@
-import { Skeleton } from '@/shared/ui/Skeleton'
 import { lazy, Suspense } from 'react'
+
+import { Skeleton } from '@/shared/ui/Skeleton'
+
 import { type ProfileRatingProps } from './ProfileRating'
 
 const ProfileRatingLazy = lazy(async () => await import('./ProfileRating'))

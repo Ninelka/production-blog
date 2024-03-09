@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
+
 import { type AddNewCommentSchema } from '../types/addNewCommentSchema'
 
 const initialState: AddNewCommentSchema = {

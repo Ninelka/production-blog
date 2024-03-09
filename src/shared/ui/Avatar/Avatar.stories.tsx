@@ -1,5 +1,7 @@
 import React from 'react'
+
 import { type ComponentMeta, type ComponentStory } from '@storybook/react'
+
 import { Avatar } from './Avatar'
 import AvatarImg from './storybook.png'
 

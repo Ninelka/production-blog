@@ -1,11 +1,14 @@
 import React from 'react'
+
 import { type ComponentMeta, type ComponentStory } from '@storybook/react'
-import ProfileRating from './ProfileRating'
-import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator'
-import { profileRatings } from '@/shared/const/storybook'
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator'
-import { Theme } from '@/shared/const/theme'
 import withMock from 'storybook-addon-mock'
+
+import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator'
+import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator'
+import { profileRatings } from '@/shared/const/storybook'
+import { Theme } from '@/shared/const/theme'
+
+import ProfileRating from './ProfileRating'
 
 export default {
   title: 'features/ProfileRating',

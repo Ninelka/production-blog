@@ -1,8 +1,11 @@
 import React from 'react'
+
 import { type ComponentStory, type ComponentMeta } from '@storybook/react'
-import { ListBox } from './ListBox'
+
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator'
 import { Theme } from '@/shared/const/theme'
+
+import { ListBox } from './ListBox'
 
 export default {
   title: 'shared/ListBox',

@@ -1,7 +1,9 @@
 import React from 'react'
-import { type ComponentStory, type ComponentMeta } from '@storybook/react'
-import { Tabs } from './Tabs'
+
 import { action } from '@storybook/addon-actions'
+import { type ComponentStory, type ComponentMeta } from '@storybook/react'
+
+import { Tabs } from './Tabs'
 
 export default {
   title: 'shared/Tabs',

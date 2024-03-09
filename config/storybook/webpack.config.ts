@@ -1,6 +1,8 @@
+import path from 'path'
+
 import { DefinePlugin, type RuleSetRule } from 'webpack'
 import type webpack from 'webpack'
-import path from 'path'
+
 import { buildCssLoader } from '../build/loaders/buildCssLoader'
 import { type BuildPaths } from '../build/types/config'
 

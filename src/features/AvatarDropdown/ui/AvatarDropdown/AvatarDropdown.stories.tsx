@@ -1,7 +1,10 @@
 import React from 'react'
+
 import { type ComponentStory, type ComponentMeta } from '@storybook/react'
-import { AvatarDropdown } from './AvatarDropdown'
+
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator'
+
+import { AvatarDropdown } from './AvatarDropdown'
 
 export default {
   title: 'features/AvatarDropdown',

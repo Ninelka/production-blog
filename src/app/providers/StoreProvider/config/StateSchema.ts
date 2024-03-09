@@ -1,16 +1,17 @@
+import { type CombinedState, type EnhancedStore, type Reducer, type ReducersMapObject } from '@reduxjs/toolkit'
+import { type AxiosInstance } from 'axios'
+import { type AnyAction } from 'redux'
+
+import { type ArticleDetailsSchema } from '@/entities/Article'
 import { type CounterSchema } from '@/entities/Counter'
 import { type UserSchema } from '@/entities/User'
-import { type LoginSchema } from '@/features/AuthByUsername'
-import { type CombinedState, type EnhancedStore, type Reducer, type ReducersMapObject } from '@reduxjs/toolkit'
-import { type AnyAction } from 'redux'
-import { type AxiosInstance } from 'axios'
-import { type ArticleDetailsSchema } from '@/entities/Article'
 import { type AddNewCommentSchema } from '@/features/AddNewComment'
-import { type ArticlesPageSchema } from '@/pages/ArticlesPage'
+import { type LoginSchema } from '@/features/AuthByUsername'
+import { type ProfileSchema } from '@/features/EditableProfileCard'
 import { type ScrollSaveSchema } from '@/features/ScrollSave'
 import { type ArticleDetailsPageSchema } from '@/pages/ArticleDetailsPage'
+import { type ArticlesPageSchema } from '@/pages/ArticlesPage'
 import { type rtkApi } from '@/shared/api/rtkApi'
-import { type ProfileSchema } from '@/features/EditableProfileCard'
 
 export interface StateSchema {
   counter: CounterSchema

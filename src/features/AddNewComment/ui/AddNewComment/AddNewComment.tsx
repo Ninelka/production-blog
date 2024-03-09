@@ -1,15 +1,18 @@
-import { classNames } from '@/shared/lib/classNames/classNames'
-import { useTranslation } from 'react-i18next'
 import { memo, useCallback } from 'react'
-import cls from './AddNewComment.module.scss'
-import { Input } from '@/shared/ui/Input'
-import { Button } from '@/shared/ui/Button'
+
+import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
-import { getAddNewCommentError, getAddNewCommentText } from '../../model/selectors/getAddNewCommentSelectors'
-import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch'
-import { addNewCommentActions, addNewCommentReducer } from '../../model/slices/addNewCommentSlice'
+
+import { classNames } from '@/shared/lib/classNames/classNames'
 import { DynamicModuleLoader, type ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch'
+import { Button } from '@/shared/ui/Button'
+import { Input } from '@/shared/ui/Input'
 import { HStack } from '@/shared/ui/Stack'
+
+import cls from './AddNewComment.module.scss'
+import { getAddNewCommentError, getAddNewCommentText } from '../../model/selectors/getAddNewCommentSelectors'
+import { addNewCommentActions, addNewCommentReducer } from '../../model/slices/addNewCommentSlice'
 
 export interface AddNewCommentProps {
   className?: string

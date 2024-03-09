@@ -1,5 +1,5 @@
-import { type AddNewCommentSchema } from '../types/addNewCommentSchema'
 import { addNewCommentActions, addNewCommentReducer } from './addNewCommentSlice'
+import { type AddNewCommentSchema } from '../types/addNewCommentSchema'
 
 describe('addNewCommentSlice.test', () => {
   test('test set comment text', () => {

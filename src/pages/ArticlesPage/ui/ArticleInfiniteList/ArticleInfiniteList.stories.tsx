@@ -1,7 +1,10 @@
 import React, { Suspense } from 'react'
+
 import { type ComponentStory, type ComponentMeta } from '@storybook/react'
-import { ArticleInfiniteList } from './ArticleInfiniteList'
+
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator'
+
+import { ArticleInfiniteList } from './ArticleInfiniteList'
 
 export default {
   title: 'pages/ArticlesPage/ArticleInfiniteList',

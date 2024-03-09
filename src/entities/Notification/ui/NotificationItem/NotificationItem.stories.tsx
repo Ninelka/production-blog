@@ -1,7 +1,10 @@
 import React from 'react'
+
 import { type ComponentStory, type ComponentMeta } from '@storybook/react'
-import { NotificationItem } from './NotificationItem'
+
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator'
+
+import { NotificationItem } from './NotificationItem'
 
 export default {
   title: 'entities/Notification/NotificationItem',

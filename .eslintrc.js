@@ -6,7 +6,8 @@ module.exports = {
   extends: [
     'plugin:react/recommended',
     'standard-with-typescript',
-    'plugin:i18next/recommended'
+    'plugin:i18next/recommended',
+    'plugin:import/recommended'
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
@@ -32,6 +33,31 @@ module.exports = {
       {
         markupOnly: true,
         ignoreAttribute: ['role', 'data-testid', 'to', 'target', 'justify', 'align', 'direction', 'gap', 'as', 'border']
+      }
+    ],
+    'import/no-unresolved': 0,
+    'import/order': [
+      'error',
+      {
+        groups: ['builtin', 'external', 'internal'],
+        pathGroups: [
+          {
+            pattern: 'react',
+            group: 'external',
+            position: 'before'
+          },
+          {
+            pattern: '@/**',
+            group: 'external',
+            position: 'after'
+          }
+        ],
+        pathGroupsExcludedImportTypes: ['react'],
+        'newlines-between': 'always',
+        alphabetize: {
+          order: 'asc',
+          caseInsensitive: true
+        }
       }
     ],
     'react-hooks/rules-of-hooks': 'error',

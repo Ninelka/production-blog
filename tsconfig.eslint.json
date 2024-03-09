@@ -5,6 +5,7 @@
     // that you want to lint here
     "src",
     "config",
+    "scripts",
 
     // add all files in which you see
     // the "parserOptions.project" error

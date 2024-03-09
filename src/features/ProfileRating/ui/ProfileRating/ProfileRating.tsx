@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next'
 import { memo, useCallback } from 'react'
 import { RatingCard } from '@/entities/Rating'
-import { Skeleton } from '@/shared/ui/Skeleton/Skeleton'
+import { Skeleton } from '@/shared/ui/Skeleton'
 import { useSelector } from 'react-redux'
 import { getUserAuthData } from '@/entities/User'
 import { useGetProfileRating, useRateProfile } from '../../api/profileRatingApi'

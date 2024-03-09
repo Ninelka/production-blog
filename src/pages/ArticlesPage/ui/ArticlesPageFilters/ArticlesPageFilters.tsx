@@ -7,8 +7,8 @@ import { acticlesPageActions } from '../../model/slices/articlesPageSlice'
 import { useSelector } from 'react-redux'
 import { getArticlesPageType, getArticlesPageView } from '../../model/selectors/articlesPageSelectors'
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch'
-import { Card } from '@/shared/ui/Card/Card'
-import { Input } from '@/shared/ui/Input/Input'
+import { Card } from '@/shared/ui/Card'
+import { Input } from '@/shared/ui/Input'
 import { type SortOrder } from '@/shared/types'
 import {
   ArticlesSortSelector,

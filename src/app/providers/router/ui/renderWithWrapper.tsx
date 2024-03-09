@@ -2,7 +2,7 @@ import React, { Suspense } from 'react'
 import { Route } from 'react-router-dom'
 import { PageLoader } from '@/widgets/PageLoader'
 import RequireAuth from './RequireAuth'
-import { AppRoutesProps } from '@/shared/types/router'
+import { type AppRoutesProps } from '@/shared/types/router'
 
 export const renderWithWrapper = (route: AppRoutesProps) => {
   const element = (

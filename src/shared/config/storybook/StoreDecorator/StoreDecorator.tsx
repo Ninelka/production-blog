@@ -6,6 +6,7 @@ import { type ReducersList } from '@/shared/lib/components/DynamicModuleLoader/D
 import { articleDetailsReducer } from '@/entities/Article/testing'
 import { addNewCommentReducer } from '@/features/AddNewComment/testing'
 import { articleDetailsPageReducer } from '@/pages/ArticleDetailsPage/testing'
+// eslint-disable-next-line fsd-path-checker-plugin/layer-imports
 import { scrollSaveReducer } from '@/features/ScrollSave'
 
 const defaultAsyncReducers: ReducersList = {

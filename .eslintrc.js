@@ -36,11 +36,11 @@ module.exports = {
     ],
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'error',
-    'ulbi-tv-plugin/path-checker': ['error', {alias: '@'}],
+    'ulbi-tv-plugin/path-checker': ['error', { alias: '@' }],
     'ulbi-tv-plugin/public-api-imports': ['error',
       {
         alias: '@',
-        testFilesPatterns: ['**/*.test.*', '**/*.stories.*', '**/StoreDecorator.tsx'],
+        testFilesPatterns: ['**/*.test.*', '**/*.stories.*', '**/StoreDecorator.tsx']
       }
     ],
     // 'fsd-path-checker-plugin/path-checker': ['error', { alias: '@' }],
@@ -50,6 +50,12 @@ module.exports = {
     //     testFilesPatterns: ['**/*.test.*', '**/*.stories.*', '**/StoreDecorator.tsx'],
     //   }
     // ]
+    'ulbi-tv-plugin/layer-imports': ['error',
+      {
+        alias: '@',
+        ignoreImportPatterns: ['**/StoreProvider']
+      }
+    ],
   },
   plugins: [
     'react',

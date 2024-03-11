@@ -5,7 +5,6 @@ import { articleDetailsReducer } from '@/entities/Article/testing'
 import { addNewCommentReducer } from '@/features/AddNewComment/testing'
 import { loginReducer } from '@/features/AuthByUsername/testing'
 import { profileReducer } from '@/features/EditableProfileCard/testing'
-// eslint-disable-next-line fsd-path-checker-plugin/layer-imports
 import { scrollSaveReducer } from '@/features/ScrollSave'
 import { articleDetailsPageReducer } from '@/pages/ArticleDetailsPage/testing'
 import { type ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'

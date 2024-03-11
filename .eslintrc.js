@@ -69,25 +69,32 @@ module.exports = {
         testFilesPatterns: ['**/*.test.*', '**/*.stories.*', '**/StoreDecorator.tsx']
       }
     ],
-    // 'fsd-path-checker-plugin/path-checker': ['error', { alias: '@' }],
-    // 'fsd-path-checker-plugin/public-api-imports': ['error',
-    //   {
-    //     alias: '@',
-    //     testFilesPatterns: ['**/*.test.*', '**/*.stories.*', '**/StoreDecorator.tsx'],
-    //   }
-    // ]
     'ulbi-tv-plugin/layer-imports': ['error',
       {
         alias: '@',
         ignoreImportPatterns: ['**/StoreProvider']
       }
-    ],
+    ]
+    // settings for local version of plugin
+    // 'fsd-path-checker-plugin/path-checker': ['error', { alias: '@' }],
+    // 'fsd-path-checker-plugin/public-api-imports': ['error',
+    //   {
+    //     alias: '@',
+    //     testFilesPatterns: ['**/*.test.*', '**/*.stories.*', '**/StoreDecorator.tsx']
+    //   }
+    // ],
+    // 'fsd-path-checker-plugin/layer-imports': ['error',
+    //   {
+    //     alias: '@',
+    //     ignoreImportPatterns: ['**/StoreProvider', '**/testing']
+    //   }
+    // ]
   },
   plugins: [
     'react',
     'i18next',
     'react-hooks',
-    'ulbi-tv-plugin',
+    'ulbi-tv-plugin'
     // 'fsd-path-checker-plugin'
   ],
   globals: {

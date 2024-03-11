@@ -1,6 +1,4 @@
-// eslint-disable-next-line fsd-path-checker-plugin/layer-imports
 import { type Article, ArticleType } from '@/entities/Article'
-// eslint-disable-next-line fsd-path-checker-plugin/layer-imports
 import { ArticleBlockType } from '@/entities/Article'
 
 export const article: Article = {

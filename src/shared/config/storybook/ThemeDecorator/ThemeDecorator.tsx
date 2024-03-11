@@ -1,6 +1,5 @@
 import { type Story } from '@storybook/react'
 
-// eslint-disable-next-line fsd-path-checker-plugin/layer-imports
 import { ThemeProvider } from '@/app/providers/ThemeProvider'
 
 import { type Theme } from '../../../const/theme'

@@ -1,6 +1,7 @@
 import React from 'react'
 
 import { type ComponentMeta, type ComponentStory } from '@storybook/react'
+import withMock from 'storybook-addon-mock'
 
 import { Country } from '@/entities/Country'
 import { Currency } from '@/entities/Currency'
@@ -13,6 +14,7 @@ import ProfilePage from './ProfilePage'
 export default {
   title: 'pages/ProfilePage',
   component: ProfilePage,
+  decorators: [withMock],
   argTypes: {
     backgroundColor: { control: 'color' }
   }
@@ -35,6 +37,16 @@ Normal.decorators = [StoreDecorator({
     }
   }
 })]
+Normal.parameters = {
+  mockData: [
+    {
+      url: __API__ + '/profile-ratings?userId=&profileId=',
+      method: 'GET',
+      status: 200,
+      response: []
+    }
+  ]
+}
 
 export const Dark = Template.bind({})
 Dark.args = {}

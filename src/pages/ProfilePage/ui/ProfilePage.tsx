@@ -13,7 +13,7 @@ interface ProfilePageProps {
 const ProfilePage = ({ className }: ProfilePageProps) => {
   const { id } = useParams<{ id: string }>()
 
-  if (!id) {
+  if (__PROJECT__ !== 'storybook' && !id) {
     return null
   }
 
@@ -21,7 +21,7 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
     <Page className={classNames('', {}, [className])}>
       <VStack max gap={'16'}>
         <EditableProfileCard id={id}/>
-        <ProfileRating profileId={id}/>
+        <ProfileRating profileId={id ?? ''}/>
       </VStack>
     </Page>
   )

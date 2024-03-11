@@ -26,7 +26,7 @@ const reducers: ReducersList = {
 const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
   const { id } = useParams<{ id: string }>()
 
-  if (!id) {
+  if (__PROJECT__ !== 'storybook' && !id) {
     return null
   }
 
@@ -36,7 +36,7 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
         <VStack max gap={'16'}>
           <ArticleDetailsPageHeader/>
           <ArticleDetails id={id}/>
-          <ArticleRating articleId={id}/>
+          <ArticleRating articleId={id ?? ''}/>
           <ArticleRecommendationsList/>
           <ArticleDetailsComments id={id} />
         </VStack>

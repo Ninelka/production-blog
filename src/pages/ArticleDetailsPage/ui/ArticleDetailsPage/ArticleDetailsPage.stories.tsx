@@ -34,6 +34,12 @@ Normal.parameters = {
         { ...article, id: '2' },
         { ...article, id: '3' }
       ]
+    },
+    {
+      url: __API__ + '/article-ratings?userId=&articleId=',
+      method: 'GET',
+      status: 200,
+      response: []
     }
   ]
 }

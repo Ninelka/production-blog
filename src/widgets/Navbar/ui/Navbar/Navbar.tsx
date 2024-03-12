@@ -7,7 +7,7 @@ import { getUserAuthData } from '@/entities/User'
 import { LoginModal } from '@/features/AuthByUsername'
 import { AvatarDropdown } from '@/features/AvatarDropdown'
 import { NotificationButton } from '@/features/NotificationButton'
-import { RoutePath } from '@/shared/const/router'
+import { getRouteArticleCreate } from '@/shared/const/router'
 import { classNames } from '@/shared/lib/classNames/classNames'
 import { AppLink, AppLinkTheme } from '@/shared/ui/AppLink'
 import { Button, ButtonVariant } from '@/shared/ui/Button'
@@ -37,7 +37,7 @@ export const Navbar: FC<NavbarProps> = memo(({ className }) => {
     return (
       <header className={classNames(cls.Navbar, {}, [className])}>
         <Text theme={TextTheme.INVERTED} className={cls.appName} title={t('My blog')}/>
-        <AppLink theme={AppLinkTheme.SECONDARY} to={RoutePath.article_create} className={cls.createBtn}>{t('Создать статью')}</AppLink>
+        <AppLink theme={AppLinkTheme.SECONDARY} to={getRouteArticleCreate()} className={cls.createBtn}>{t('Создать статью')}</AppLink>
         <HStack gap={'16'} className={cls.actions}>
           <NotificationButton/>
           <AvatarDropdown/>

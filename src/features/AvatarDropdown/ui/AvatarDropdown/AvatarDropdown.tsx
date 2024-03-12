@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
 
 import { getUserAuthData, isUserAdmin, isUserManager, userActions } from '@/entities/User'
-import { RoutePath } from '@/shared/const/router'
+import { getRouteAdmin, getRouteProfile } from '@/shared/const/router'
 import { classNames } from '@/shared/lib/classNames/classNames'
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch'
 import { Avatar } from '@/shared/ui/Avatar'
@@ -40,10 +40,10 @@ export const AvatarDropdown = memo((props: AvatarDropdownProps) => {
             ...(isAdminPanelAvailable
               ? [{
                   content: t('Админ панель'),
-                  href: RoutePath.admin_panel
+                  href: getRouteAdmin()
                 }]
               : []),
-            { content: t('Профиль'), href: RoutePath.profile + authData.id },
+            { content: t('Профиль'), href: getRouteProfile(authData.id) },
             { content: t('Выйти'), onClick: onLogout }
           ]}
           trigger={<Avatar size={30} src={authData.avatar}/>}

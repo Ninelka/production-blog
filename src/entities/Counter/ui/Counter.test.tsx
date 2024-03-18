@@ -31,4 +31,13 @@ describe('Counter', () => {
     await userEvent.click(screen.getByTestId('decrement-btn'))
     expect(screen.getByTestId('value-title')).toHaveTextContent('9')
   })
+
+  test('add 5', async () => {
+    componentRender(<Counter/>, {
+      initialState: { counter: { value: 10 } }
+    })
+
+    await userEvent.click(screen.getByTestId('add-five-btn'))
+    expect(screen.getByTestId('value-title')).toHaveTextContent('15')
+  })
 })

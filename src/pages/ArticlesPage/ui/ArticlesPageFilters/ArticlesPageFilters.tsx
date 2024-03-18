@@ -3,7 +3,7 @@ import { memo, useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
 
-import { type ArticleSortField, type ArticleView, type ArticleType, ArticleViewSelector } from '@/entities/Article'
+import { type ArticleSortField, type ArticleView, type ArticleType } from '@/entities/Article'
 import {
   ArticlesSortSelector,
   getArticlesOrder,
@@ -11,6 +11,7 @@ import {
   getArticlesSort
 } from '@/features/ArticlesSortSelector'
 import { ArticleTypeTabs } from '@/features/ArticleTypeTabs'
+import { ArticleViewSelector } from '@/features/ArticleViewSelector'
 import { classNames } from '@/shared/lib/classNames/classNames'
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch'
 import { useDebounce } from '@/shared/lib/hooks/useDebounce/useDebounce'

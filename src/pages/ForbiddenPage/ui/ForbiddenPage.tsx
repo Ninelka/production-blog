@@ -12,7 +12,7 @@ const ForbiddenPage = memo((props: AdminPanelPageProps) => {
   const { t } = useTranslation()
 
   return (
-    <Page>
+    <Page data-testid='ForbiddenPage'>
       {t('У вас нет доступа к этой странице')}
     </Page>
   )

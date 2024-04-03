@@ -4,10 +4,10 @@ import { type ComponentMeta, type ComponentStory } from '@storybook/react'
 import withMock from 'storybook-addon-mock'
 
 import UserIcon from '@/shared/assets/icons/user-filled.svg'
-import { Icon } from '@/shared/ui/Icon'
-import { Skeleton } from '@/shared/ui/Skeleton'
 
 import { AppImage } from './AppImage'
+import { Icon } from '../Icon'
+import { Skeleton } from '../Skeleton'
 
 export default {
   title: 'shared/AppImage',
@@ -32,6 +32,7 @@ withFallback.args = {
   fallback
 }
 withFallback.parameters = {
+  loki: { skip: true },
   mockData: [
     {
       url: __API__ + '/some-image.png',
@@ -47,4 +48,7 @@ withErrorFallback.args = {
   ...defaultArgs,
   fallback,
   errorFallback
+}
+withErrorFallback.parameters = {
+  loki: { skip: true }
 }

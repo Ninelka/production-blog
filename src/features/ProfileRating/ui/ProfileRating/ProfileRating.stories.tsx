@@ -18,32 +18,47 @@ export default {
 
 const Template: ComponentStory<typeof ProfileRating> = (args) => <ProfileRating {...args} />
 
-export const NormalWithoutRate = Template.bind({})
-NormalWithoutRate.args = {}
-NormalWithoutRate.decorators = [StoreDecorator({})]
+const defaultMocks = {
+  url: __API__ + '/profile-ratings?userId=1&profileId=1',
+  method: 'GET',
+  status: 200,
+  response: []
+}
 
-export const DarkWithoutRate = Template.bind({})
-DarkWithoutRate.args = {}
-DarkWithoutRate.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({})]
-
-export const NormalWithRate = Template.bind({})
-NormalWithRate.args = {
+const defaultArgs = {
   profileId: '1'
 }
-NormalWithRate.decorators = [StoreDecorator({
+
+const defaultStore = {
   user: {
     authData: {
       id: '1',
       username: 'admin'
     }
   }
-})]
+}
+
+export const NormalWithoutRate = Template.bind({})
+NormalWithoutRate.args = defaultArgs
+NormalWithoutRate.decorators = [StoreDecorator(defaultStore)]
+NormalWithoutRate.parameters = {
+  mockData: [defaultMocks]
+}
+
+export const DarkWithoutRate = Template.bind({})
+DarkWithoutRate.args = defaultArgs
+DarkWithoutRate.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator(defaultStore)]
+DarkWithoutRate.parameters = {
+  mockData: [defaultMocks]
+}
+
+export const NormalWithRate = Template.bind({})
+NormalWithRate.args = defaultArgs
+NormalWithRate.decorators = [StoreDecorator(defaultStore)]
 NormalWithRate.parameters = {
   mockData: [
     {
-      url: __API__ + '/profile-ratings?userId=1&profileId=1',
-      method: 'GET',
-      status: 200,
+      ...defaultMocks,
       response: [
         { ...profileRatings }
       ]
@@ -52,14 +67,15 @@ NormalWithRate.parameters = {
 }
 
 export const DarkWithRate = Template.bind({})
-DarkWithRate.args = {
-  profileId: '1'
-}
-DarkWithRate.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({
-  user: {
-    authData: {
-      id: '1',
-      username: 'admin'
+DarkWithRate.args = defaultArgs
+DarkWithRate.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator(defaultStore)]
+DarkWithRate.parameters = {
+  mockData: [
+    {
+      ...defaultMocks,
+      response: [
+        { ...profileRatings }
+      ]
     }
-  }
-})]
+  ]
+}

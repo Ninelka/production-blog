@@ -63,3 +63,13 @@ Dark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({
     }
   }
 })]
+Dark.parameters = {
+  mockData: [
+    {
+      url: __API__ + '/profile-ratings?userId=&profileId=',
+      method: 'GET',
+      status: 200,
+      response: []
+    }
+  ]
+}

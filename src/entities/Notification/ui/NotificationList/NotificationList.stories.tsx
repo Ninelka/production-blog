@@ -1,7 +1,6 @@
 import React from 'react'
 
 import { type ComponentMeta, type ComponentStory } from '@storybook/react'
-import withMock from 'storybook-addon-mock'
 
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator'
 import { notification } from '@/shared/const/storybook'
@@ -10,8 +9,7 @@ import { NotificationList } from './NotificationList'
 
 export default {
   title: 'entities/Notification/NotificationList',
-  component: NotificationList,
-  decorators: [withMock]
+  component: NotificationList
 } as ComponentMeta<typeof NotificationList>
 
 const Template: ComponentStory<typeof NotificationList> = (args) => <NotificationList {...args} />

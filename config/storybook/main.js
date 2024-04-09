@@ -5,13 +5,13 @@ module.exports = {
   addons: [
     '@storybook/addon-links',
     '@storybook/addon-interactions',
-    'storybook-addon-mock/register',
+    'storybook-addon-mock',
     'storybook-addon-themes',
     {
       name: '@storybook/addon-essentials',
       options: {
-        backgrounds: false,
-      },
+        backgrounds: false
+      }
     }
   ],
   framework: '@storybook/react',

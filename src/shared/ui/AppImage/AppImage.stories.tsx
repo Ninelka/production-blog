@@ -1,7 +1,6 @@
 import React from 'react'
 
 import { type ComponentMeta, type ComponentStory } from '@storybook/react'
-import withMock from 'storybook-addon-mock'
 
 import UserIcon from '@/shared/assets/icons/user-filled.svg'
 
@@ -11,8 +10,7 @@ import { Skeleton } from '../Skeleton'
 
 export default {
   title: 'shared/AppImage',
-  component: AppImage,
-  decorators: [withMock]
+  component: AppImage
 } as ComponentMeta<typeof AppImage>
 
 const Template: ComponentStory<typeof AppImage> = (args) => <AppImage {...args} />

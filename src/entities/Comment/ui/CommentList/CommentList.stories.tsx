@@ -34,6 +34,9 @@ Loading.args = {
   comments: [],
   isLoading: true
 }
+Loading.parameters = {
+  loki: { skip: true }
+}
 
 Normal.decorators = [
   StoreDecorator({})

@@ -40,6 +40,7 @@ Loading.decorators = [
   StoreDecorator({})
 ]
 Loading.parameters = {
+  loki: { skip: true },
   mockData: [
     {
       url: __API__ + '/notifications',

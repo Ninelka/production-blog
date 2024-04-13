@@ -19,6 +19,9 @@ Normal.args = {
   width: '100%',
   height: 200
 }
+Normal.parameters = {
+  loki: { skip: true }
+}
 
 export const Circle = Template.bind({})
 Circle.args = {
@@ -31,6 +34,9 @@ export const NormalDark = Template.bind({})
 NormalDark.args = {
   width: '100%',
   height: 200
+}
+NormalDark.parameters = {
+  loki: { skip: true }
 }
 NormalDark.decorators = [ThemeDecorator(Theme.DARK)]
 

@@ -98,3 +98,6 @@ List.args = {
   view: ArticleView.LIST,
   article
 }
+List.parameters = {
+  loki: { skip: true }
+}

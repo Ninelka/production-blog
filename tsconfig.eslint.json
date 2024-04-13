@@ -6,11 +6,13 @@
     "src",
     "config",
     "scripts",
+    "cypress",
 
     // add all files in which you see
     // the "parserOptions.project" error
     "./.eslintrc.js",
     "./webpack.config.ts",
-    "./vite.config.ts"
+    "./vite.config.ts",
+    "./cypress.config.ts"
   ]
 }

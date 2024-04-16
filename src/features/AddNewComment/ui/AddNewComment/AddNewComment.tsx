@@ -44,14 +44,15 @@ const AddNewComment = memo(({ className, onSendComment }: AddNewCommentProps) =>
 
   return (
     <DynamicModuleLoader reducers={reducers}>
-      <HStack max justify={'between'} className={classNames(cls.AddNewComment, {}, [className])}>
+      <HStack data-testid="AddNewComment" max justify={'between'} className={classNames(cls.AddNewComment, {}, [className])}>
         <Input
+          data-testid="AddNewComment.Input"
           placeholder={t('Введите текст комментария')}
           value={text}
           onChange={onCommentTextChange}
           className={cls.input}
         />
-        <Button onClick={onSendHandler}>{t('Отправить')}</Button>
+        <Button data-testid="AddNewComment.Button" onClick={onSendHandler}>{t('Отправить')}</Button>
       </HStack>
     </DynamicModuleLoader>
   )

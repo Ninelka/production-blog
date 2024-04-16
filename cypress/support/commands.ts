@@ -1,15 +1,13 @@
-import { login } from './commands/login'
+import * as articleCommands from './commands/article'
+import * as commentCommands from './commands/comment'
+import * as commonCommands from './commands/common'
+import * as profileCommands from './commands/profile'
+import * as ratingCommands from './commands/rating'
 
-Cypress.Commands.add('login', login)
-
-declare global {
-  // eslint-disable-next-line @typescript-eslint/no-namespace
-  namespace Cypress {
-    interface Chainable {
-      // eslint-disable-next-line @typescript-eslint/method-signature-style
-      login(username?: string, password?: string): Chainable<void>
-    }
-  }
-}
+Cypress.Commands.addAll(commonCommands)
+Cypress.Commands.addAll(profileCommands)
+Cypress.Commands.addAll(articleCommands)
+Cypress.Commands.addAll(commentCommands)
+Cypress.Commands.addAll(ratingCommands)
 
 export {}

@@ -7,11 +7,13 @@ import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDe
 import { NotificationButton } from './NotificationButton'
 
 export default {
-  title: 'features/NotificationButton',
-  component: NotificationButton
+    title: 'features/NotificationButton',
+    component: NotificationButton,
 } as ComponentMeta<typeof NotificationButton>
 
-const Template: ComponentStory<typeof NotificationButton> = (args) => <NotificationButton {...args} />
+const Template: ComponentStory<typeof NotificationButton> = (args) => (
+    <NotificationButton {...args} />
+)
 
 export const Normal = Template.bind({})
 Normal.args = {}

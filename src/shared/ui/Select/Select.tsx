@@ -5,43 +5,50 @@ import { classNames, type Mods } from '@/shared/lib/classNames/classNames'
 import cls from './Select.module.scss'
 
 export interface SelectOption<T extends string> {
-  value: T
-  content: string
+    value: T
+    content: string
 }
 
 interface SelectProps<T extends string> {
-  className?: string
-  label?: string
-  options?: Array<SelectOption<T>>
-  value?: T
-  onChange?: (value: T) => void
-  readonly?: boolean
+    className?: string
+    label?: string
+    options?: Array<SelectOption<T>>
+    value?: T
+    onChange?: (value: T) => void
+    readonly?: boolean
 }
 
 export const Select = <T extends string>(props: SelectProps<T>) => {
-  const { className, label, options, value, onChange, readonly } = props
+    const { className, label, options, value, onChange, readonly } = props
 
-  const optionsList = useMemo(() => {
-    return options?.map((opt) => (
-      <option key={opt.value} value={opt.value} className={cls.option}>{opt.content}</option>
-    ))
-  }, [options])
-  const mods: Mods = {}
+    const optionsList = useMemo(() => {
+        return options?.map((opt) => (
+            <option key={opt.value} value={opt.value} className={cls.option}>
+                {opt.content}
+            </option>
+        ))
+    }, [options])
+    const mods: Mods = {}
 
-  function onChangeHandler (e: ChangeEvent<HTMLSelectElement>) {
-    if (onChange) {
-      onChange(e.target.value as T)
+    function onChangeHandler(e: ChangeEvent<HTMLSelectElement>) {
+        if (onChange) {
+            onChange(e.target.value as T)
+        }
     }
-  }
 
-  return (
+    return (
         <div className={classNames(cls.Wrapper, mods, [className])}>
-          {label && <span className={cls.label}>{label}</span>}
-          <select disabled={readonly} className={cls.select} value={value} onChange={onChangeHandler}>
-            {optionsList}
-          </select>
+            {label && <span className={cls.label}>{label}</span>}
+            <select
+                disabled={readonly}
+                className={cls.select}
+                value={value}
+                onChange={onChangeHandler}
+            >
+                {optionsList}
+            </select>
         </div>
-  )
+    )
 }
 
 Select.displayName = 'Select'

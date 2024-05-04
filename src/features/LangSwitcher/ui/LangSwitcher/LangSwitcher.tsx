@@ -6,22 +6,28 @@ import { classNames } from '@/shared/lib/classNames/classNames'
 import { Button, ButtonVariant } from '@/shared/ui/Button'
 
 interface LangSwitcherProps {
-  className?: string
-  short?: boolean
+    className?: string
+    short?: boolean
 }
 
-export const LangSwitcher: FC<LangSwitcherProps> = memo(({ className, short }) => {
-  const { t, i18n } = useTranslation()
+export const LangSwitcher: FC<LangSwitcherProps> = memo(
+    ({ className, short }) => {
+        const { t, i18n } = useTranslation()
 
-  const toggle = (): void => {
-    i18n.changeLanguage(i18n.language === 'ru' ? 'en' : 'ru')
-  }
+        const toggle = (): void => {
+            i18n.changeLanguage(i18n.language === 'ru' ? 'en' : 'ru')
+        }
 
-  return (
-		<Button theme={ButtonVariant.CLEAR} onClick={toggle} className={classNames('', {}, [className])}>
-			{short ? t('Короткий язык') : t('Язык')}
-		</Button>
-  )
-})
+        return (
+            <Button
+                theme={ButtonVariant.CLEAR}
+                onClick={toggle}
+                className={classNames('', {}, [className])}
+            >
+                {short ? t('Короткий язык') : t('Язык')}
+            </Button>
+        )
+    },
+)
 
 LangSwitcher.displayName = 'LangSwitcher'

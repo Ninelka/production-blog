@@ -6,18 +6,21 @@ import { classNames } from '@/shared/lib/classNames/classNames'
 import { Page } from '@/widgets/Page'
 
 interface AdminPanelPageProps {
-  className?: string
+    className?: string
 }
 
 const AdminPanelPage = memo((props: AdminPanelPageProps) => {
-  const { className } = props
-  const { t } = useTranslation()
+    const { className } = props
+    const { t } = useTranslation()
 
-  return (
-        <Page data-testid='AdminPanelPage' className={classNames('', {}, [className])}>
-          {t('Админ панель')}
+    return (
+        <Page
+            data-testid="AdminPanelPage"
+            className={classNames('', {}, [className])}
+        >
+            {t('Админ панель')}
         </Page>
-  )
+    )
 })
 
 export default AdminPanelPage

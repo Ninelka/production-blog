@@ -7,11 +7,13 @@ import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDe
 import ArticleDetailsPageHeader from './ArticleDetailsPageHeader'
 
 export default {
-  title: 'pages/ArticleDetailsPage/ArticleDetailsPageHeader',
-  component: ArticleDetailsPageHeader
+    title: 'pages/ArticleDetailsPage/ArticleDetailsPageHeader',
+    component: ArticleDetailsPageHeader,
 } as ComponentMeta<typeof ArticleDetailsPageHeader>
 
-const Template: ComponentStory<typeof ArticleDetailsPageHeader> = (args) => <ArticleDetailsPageHeader {...args} />
+const Template: ComponentStory<typeof ArticleDetailsPageHeader> = (args) => (
+    <ArticleDetailsPageHeader {...args} />
+)
 
 export const Normal = Template.bind({})
 Normal.args = {}

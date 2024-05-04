@@ -8,17 +8,21 @@ import { useTheme } from '@/shared/lib/hooks/useTheme/useTheme'
 import { Button, ButtonVariant } from '@/shared/ui/Button'
 
 interface ThemeSwitcherProps {
-  className?: string
+    className?: string
 }
 
 export const ThemeSwitcher: FC<ThemeSwitcherProps> = memo(({ className }) => {
-  const { theme, toggleTheme } = useTheme()
+    const { theme, toggleTheme } = useTheme()
 
-  return (
-    <Button theme={ButtonVariant.CLEAR} onClick={toggleTheme} className={classNames('', {}, [className])}>
-      {theme === Theme.DARK ? <DarkIcon/> : <LightIcon/>}
-    </Button>
-  )
+    return (
+        <Button
+            theme={ButtonVariant.CLEAR}
+            onClick={toggleTheme}
+            className={classNames('', {}, [className])}
+        >
+            {theme === Theme.DARK ? <DarkIcon /> : <LightIcon />}
+        </Button>
+    )
 })
 
 ThemeSwitcher.displayName = 'ThemeSwitcher'

@@ -8,16 +8,16 @@ import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDe
 import AddNewComment from './AddNewComment'
 
 export default {
-  title: 'features/AddNewComment',
-  component: AddNewComment
+    title: 'features/AddNewComment',
+    component: AddNewComment,
 } as ComponentMeta<typeof AddNewComment>
 
-const Template: ComponentStory<typeof AddNewComment> = (args) => <AddNewComment {...args} />
+const Template: ComponentStory<typeof AddNewComment> = (args) => (
+    <AddNewComment {...args} />
+)
 
 export const Normal = Template.bind({})
 Normal.args = {
-  onSendComment: action('onSendComment')
+    onSendComment: action('onSendComment'),
 }
-Normal.decorators = [
-  StoreDecorator({})
-]
+Normal.decorators = [StoreDecorator({})]

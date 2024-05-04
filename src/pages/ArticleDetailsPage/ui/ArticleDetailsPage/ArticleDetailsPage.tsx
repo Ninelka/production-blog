@@ -6,7 +6,10 @@ import { ArticleDetails } from '@/entities/Article'
 import { ArticleRating } from '@/features/ArticleRating'
 import { ArticleRecommendationsList } from '@/features/ArticleRecommendationsList'
 import { classNames } from '@/shared/lib/classNames/classNames'
-import { DynamicModuleLoader, type ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
+import {
+    DynamicModuleLoader,
+    type ReducersList,
+} from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
 import { VStack } from '@/shared/ui/Stack'
 import { Page } from '@/widgets/Page'
 
@@ -16,33 +19,35 @@ import { ArticleDetailsComments } from '../../ui/ArticleDetailsComments/ArticleD
 import ArticleDetailsPageHeader from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader'
 
 interface ArticleDetailsPageProps {
-  className?: string
+    className?: string
 }
 
 const reducers: ReducersList = {
-  articleDetailsPage: articleDetailsPageReducer
+    articleDetailsPage: articleDetailsPageReducer,
 }
 
 const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
-  const { id } = useParams<{ id: string }>()
+    const { id } = useParams<{ id: string }>()
 
-  if (__PROJECT__ !== 'storybook' && !id) {
-    return null
-  }
+    if (__PROJECT__ !== 'storybook' && !id) {
+        return null
+    }
 
-  return (
-    <DynamicModuleLoader reducers={reducers}>
-      <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
-        <VStack max gap={'16'}>
-          <ArticleDetailsPageHeader/>
-          <ArticleDetails id={id}/>
-          <ArticleRating articleId={id ?? ''}/>
-          <ArticleRecommendationsList/>
-          <ArticleDetailsComments id={id} />
-        </VStack>
-      </Page>
-    </DynamicModuleLoader>
-  )
+    return (
+        <DynamicModuleLoader reducers={reducers}>
+            <Page
+                className={classNames(cls.ArticleDetailsPage, {}, [className])}
+            >
+                <VStack max gap={'16'}>
+                    <ArticleDetailsPageHeader />
+                    <ArticleDetails id={id} />
+                    <ArticleRating articleId={id ?? ''} />
+                    <ArticleRecommendationsList />
+                    <ArticleDetailsComments id={id} />
+                </VStack>
+            </Page>
+        </DynamicModuleLoader>
+    )
 }
 
 export default memo(ArticleDetailsPage)

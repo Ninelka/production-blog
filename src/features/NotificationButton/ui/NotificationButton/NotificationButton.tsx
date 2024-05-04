@@ -12,43 +12,47 @@ import { Popover } from '@/shared/ui/Popups'
 import cls from './NotificationButton.module.scss'
 
 interface NotificationButtonProps {
-  className?: string
+    className?: string
 }
 
 export const NotificationButton = memo((props: NotificationButtonProps) => {
-  const { className } = props
-  const isMobile = useDevice()
-  const [isOpen, setIsOpen] = useState(false)
+    const { className } = props
+    const isMobile = useDevice()
+    const [isOpen, setIsOpen] = useState(false)
 
-  const onOpenDrawer = useCallback(() => {
-    setIsOpen(true)
-  }, [])
-  const onCloseDrawer = useCallback(() => {
-    setIsOpen(false)
-  }, [])
+    const onOpenDrawer = useCallback(() => {
+        setIsOpen(true)
+    }, [])
+    const onCloseDrawer = useCallback(() => {
+        setIsOpen(false)
+    }, [])
 
-  const trigger = (
-    <Button theme={ButtonVariant.CLEAR} onClick={onOpenDrawer}>
-      <Icon inverted Svg={NotificationIcon}/>
-    </Button>
-  )
-
-  if (isMobile) {
-    return (
-      <>
-        {trigger}
-          <Drawer isOpen={isOpen} onClose={onCloseDrawer}>
-            <NotificationList/>
-          </Drawer>
-      </>
+    const trigger = (
+        <Button theme={ButtonVariant.CLEAR} onClick={onOpenDrawer}>
+            <Icon inverted Svg={NotificationIcon} />
+        </Button>
     )
-  }
 
-  return (
-    <Popover className={classNames(cls.NotificationButton, {}, [className])} direction={'bottom left'} trigger={trigger}>
-      <NotificationList className={cls.notifications}/>
-    </Popover>
-  )
+    if (isMobile) {
+        return (
+            <>
+                {trigger}
+                <Drawer isOpen={isOpen} onClose={onCloseDrawer}>
+                    <NotificationList />
+                </Drawer>
+            </>
+        )
+    }
+
+    return (
+        <Popover
+            className={classNames(cls.NotificationButton, {}, [className])}
+            direction={'bottom left'}
+            trigger={trigger}
+        >
+            <NotificationList className={cls.notifications} />
+        </Popover>
+    )
 })
 
 NotificationButton.displayName = 'NotificationButton'

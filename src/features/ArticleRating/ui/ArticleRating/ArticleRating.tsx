@@ -10,51 +10,65 @@ import { Skeleton } from '@/shared/ui/Skeleton'
 import { useGetArticleRating, useRateArticle } from '../../api/articleRatingApi'
 
 export interface ArticleRatingProps {
-  className?: string
-  articleId: string
+    className?: string
+    articleId: string
 }
 
 const ArticleRating = memo((props: ArticleRatingProps) => {
-  const { className, articleId } = props
-  const { t } = useTranslation()
-  const userData = useSelector(getUserAuthData)
-  const { data, isLoading } = useGetArticleRating({ articleId, userId: userData?.id ?? '' })
-  const [rateArticleMutation] = useRateArticle()
-
-  const handleRateArticle = useCallback((starsCount: number, feedback?: string) => {
-    rateArticleMutation({
-      userId: userData?.id ?? '',
-      articleId,
-      rate: starsCount,
-      feedback
+    const { className, articleId } = props
+    const { t } = useTranslation()
+    const userData = useSelector(getUserAuthData)
+    const { data, isLoading } = useGetArticleRating({
+        articleId,
+        userId: userData?.id ?? '',
     })
-  }, [articleId, rateArticleMutation, userData?.id])
+    const [rateArticleMutation] = useRateArticle()
 
-  const onAccept = useCallback((starsCount: number, feedback?: string) => {
-    handleRateArticle(starsCount, feedback)
-  }, [handleRateArticle])
+    const handleRateArticle = useCallback(
+        (starsCount: number, feedback?: string) => {
+            rateArticleMutation({
+                userId: userData?.id ?? '',
+                articleId,
+                rate: starsCount,
+                feedback,
+            })
+        },
+        [articleId, rateArticleMutation, userData?.id],
+    )
 
-  const onCancel = useCallback((starsCount: number) => {
-    handleRateArticle(starsCount)
-  }, [handleRateArticle])
+    const onAccept = useCallback(
+        (starsCount: number, feedback?: string) => {
+            handleRateArticle(starsCount, feedback)
+        },
+        [handleRateArticle],
+    )
 
-  if (isLoading) {
-    return <Skeleton width="100%" height={120} />
-  }
+    const onCancel = useCallback(
+        (starsCount: number) => {
+            handleRateArticle(starsCount)
+        },
+        [handleRateArticle],
+    )
 
-  const rating = data?.[0]
+    if (isLoading) {
+        return <Skeleton width="100%" height={120} />
+    }
 
-  return (
-    <RatingCard
-      onAccept={onAccept}
-      onCancel={onCancel}
-      className={className}
-      title={t('Оцените статью')}
-      feedbackTitle={t('Оставьте свой отзыв о статье, это поможет улучшить качество')}
-      hasFeedback
-      rate={rating?.rate}
-    />
-  )
+    const rating = data?.[0]
+
+    return (
+        <RatingCard
+            onAccept={onAccept}
+            onCancel={onCancel}
+            className={className}
+            title={t('Оцените статью')}
+            feedbackTitle={t(
+                'Оставьте свой отзыв о статье, это поможет улучшить качество',
+            )}
+            hasFeedback
+            rate={rating?.rate}
+        />
+    )
 })
 
 export default ArticleRating

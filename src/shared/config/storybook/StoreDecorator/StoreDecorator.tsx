@@ -10,17 +10,23 @@ import { articleDetailsPageReducer } from '@/pages/ArticleDetailsPage/testing'
 import { type ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
 
 const defaultAsyncReducers: ReducersList = {
-  loginForm: loginReducer,
-  profile: profileReducer,
-  articleDetails: articleDetailsReducer,
-  addNewComment: addNewCommentReducer,
-  articleDetailsPage: articleDetailsPageReducer,
-  scrollSave: scrollSaveReducer
+    loginForm: loginReducer,
+    profile: profileReducer,
+    articleDetails: articleDetailsReducer,
+    addNewComment: addNewCommentReducer,
+    articleDetailsPage: articleDetailsPageReducer,
+    scrollSave: scrollSaveReducer,
 }
 
 // eslint-disable-next-line react/display-name
-export const StoreDecorator = (state: DeepPartial<StateSchema>, asyncReducers?: ReducersList) => (StoryComponent: Story) => (
-  <StoreProvider initialState={state} asyncReducers={{ ...defaultAsyncReducers, ...asyncReducers }}>
-      <StoryComponent />
-  </StoreProvider>
-)
+export const StoreDecorator =
+    (state: DeepPartial<StateSchema>, asyncReducers?: ReducersList) =>
+    (StoryComponent: Story) =>
+        (
+            <StoreProvider
+                initialState={state}
+                asyncReducers={{ ...defaultAsyncReducers, ...asyncReducers }}
+            >
+                <StoryComponent />
+            </StoreProvider>
+        )

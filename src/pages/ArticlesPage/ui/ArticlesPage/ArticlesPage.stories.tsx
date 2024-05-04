@@ -8,26 +8,30 @@ import { article } from '@/shared/const/storybook'
 import ArticlesPage from './ArticlesPage'
 
 export default {
-  title: 'pages/ArticlesPage',
-  component: ArticlesPage
+    title: 'pages/ArticlesPage',
+    component: ArticlesPage,
 } as ComponentMeta<typeof ArticlesPage>
 
-const Template: ComponentStory<typeof ArticlesPage> = (args) => <ArticlesPage {...args} />
+const Template: ComponentStory<typeof ArticlesPage> = (args) => (
+    <ArticlesPage {...args} />
+)
 
 export const Normal = Template.bind({})
 Normal.args = {}
 Normal.decorators = [StoreDecorator({})]
 Normal.parameters = {
-  mockData: [
-    {
-      url: __API__ + '/articles?_expand=user&_limit=9&_page=2&_sort=createdAt&_order=asc&q=',
-      method: 'GET',
-      status: 200,
-      response: [
-        { ...article },
-        { ...article, id: '2' },
-        { ...article, id: '3' }
-      ]
-    }
-  ]
+    mockData: [
+        {
+            url:
+                __API__ +
+                '/articles?_expand=user&_limit=9&_page=2&_sort=createdAt&_order=asc&q=',
+            method: 'GET',
+            status: 200,
+            response: [
+                { ...article },
+                { ...article, id: '2' },
+                { ...article, id: '3' },
+            ],
+        },
+    ],
 }

@@ -8,33 +8,34 @@ import { getUserAuthData } from '@/entities/User'
 import { fetchCommentsByArticleId } from '../../services/fetchCommentsByArticleId/fetchCommentsByArticleId'
 
 // eslint-disable-next-line @typescript-eslint/no-invalid-void-type
-export const addCommentForArticle = createAsyncThunk<Comment, string, ThunkConfig<string>>(
-  'articleDetails/addCommentForArticle',
-  async (text, thunkApi) => {
+export const addCommentForArticle = createAsyncThunk<
+    Comment,
+    string,
+    ThunkConfig<string>
+>('articleDetails/addCommentForArticle', async (text, thunkApi) => {
     const { extra, dispatch, rejectWithValue, getState } = thunkApi
     const userData = getUserAuthData(getState())
     const article = getArticleDetailsData(getState())
 
     if (!userData || !text || !article) {
-      return rejectWithValue('no data')
+        return rejectWithValue('no data')
     }
 
     try {
-      const response = await extra.api.post<Comment>('/comments', {
-        articleId: article.id,
-        userId: userData.id,
-        text
-      })
+        const response = await extra.api.post<Comment>('/comments', {
+            articleId: article.id,
+            userId: userData.id,
+            text,
+        })
 
-      if (!response.data) {
-        throw new Error()
-      }
+        if (!response.data) {
+            throw new Error()
+        }
 
-      dispatch(fetchCommentsByArticleId(article.id))
+        dispatch(fetchCommentsByArticleId(article.id))
 
-      return response.data
+        return response.data
     } catch (e) {
-      return rejectWithValue('error')
+        return rejectWithValue('error')
     }
-  }
-)
+})

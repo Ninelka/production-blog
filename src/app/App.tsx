@@ -11,24 +11,24 @@ import { Sidebar } from '@/widgets/Sidebar'
 import { AppRouter } from './providers/router'
 
 const App = () => {
-  const dispatch = useAppDispatch()
-  const inited = useSelector(getUserInited)
+    const dispatch = useAppDispatch()
+    const inited = useSelector(getUserInited)
 
-  useEffect(() => {
-    dispatch(userActions.initAuthData())
-  }, [dispatch])
+    useEffect(() => {
+        dispatch(userActions.initAuthData())
+    }, [dispatch])
 
-  return (
-		<div className={classNames('app', {}, [])}>
-			<Suspense fallback="">
-				<Navbar />
-				<div className="content-page">
-					<Sidebar/>
-					{inited && <AppRouter />}
-				</div>
-			</Suspense>
-		</div>
-  )
+    return (
+        <div className={classNames('app', {}, [])}>
+            <Suspense fallback="">
+                <Navbar />
+                <div className="content-page">
+                    <Sidebar />
+                    {inited && <AppRouter />}
+                </div>
+            </Suspense>
+        </div>
+    )
 }
 
 export default App

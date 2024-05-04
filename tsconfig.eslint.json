@@ -1,18 +1,18 @@
 {
-  "extends": "./tsconfig.json",
-  "include": [
-    // 👇️ add all the directories and files
-    // that you want to lint here
-    "src",
-    "config",
-    "scripts",
-    "cypress",
+    "extends": "./tsconfig.json",
+    "include": [
+        // 👇️ add all the directories and files
+        // that you want to lint here
+        "src",
+        "config",
+        "scripts",
+        "cypress",
 
-    // add all files in which you see
-    // the "parserOptions.project" error
-    "./.eslintrc.js",
-    "./webpack.config.ts",
-    "./vite.config.ts",
-    "./cypress.config.ts"
-  ]
+        // add all files in which you see
+        // the "parserOptions.project" error
+        "./.eslintrc.js",
+        "./webpack.config.ts",
+        "./vite.config.ts",
+        "./cypress.config.ts"
+    ]
 }

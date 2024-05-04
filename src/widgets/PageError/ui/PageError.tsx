@@ -6,22 +6,20 @@ import { Button } from '@/shared/ui/Button'
 import cls from './PageError.module.scss'
 
 interface PageErrorProps {
-  className?: string
+    className?: string
 }
 
 export const PageError = ({ className }: PageErrorProps) => {
-  const { t } = useTranslation()
+    const { t } = useTranslation()
 
-  const reloadPage = (): void => {
-    location.reload()
-  }
+    const reloadPage = (): void => {
+        location.reload()
+    }
 
-  return (
+    return (
         <div className={classNames(cls.PageError, {}, [className])}>
-          {t('Произошла непредвиденная ошибка')}
-          <Button onClick={reloadPage}>
-            {t('Обновить страницу')}
-          </Button>
+            {t('Произошла непредвиденная ошибка')}
+            <Button onClick={reloadPage}>{t('Обновить страницу')}</Button>
         </div>
-  )
+    )
 }

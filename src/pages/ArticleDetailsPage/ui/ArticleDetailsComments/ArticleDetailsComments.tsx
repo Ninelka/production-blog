@@ -19,34 +19,46 @@ import { fetchCommentsByArticleId } from '../../model/services/fetchCommentsByAr
 import { getArticleComments } from '../../model/slices/articleDetailsCommentsSlice'
 
 interface ArticleDetailsCommentsProps {
-  className?: string
-  id?: string
+    className?: string
+    id?: string
 }
 
-export const ArticleDetailsComments = memo((props: ArticleDetailsCommentsProps) => {
-  const { className, id } = props
-  const { t } = useTranslation('article')
-  const dispatch = useAppDispatch()
-  const comments = useSelector(getArticleComments.selectAll)
-  const commentsIsLoading = useSelector(getArticleCommentsIsLoading)
+export const ArticleDetailsComments = memo(
+    (props: ArticleDetailsCommentsProps) => {
+        const { className, id } = props
+        const { t } = useTranslation('article')
+        const dispatch = useAppDispatch()
+        const comments = useSelector(getArticleComments.selectAll)
+        const commentsIsLoading = useSelector(getArticleCommentsIsLoading)
 
-  const onSendComment = useCallback((text: string) => {
-    dispatch(addCommentForArticle(text))
-  }, [dispatch])
+        const onSendComment = useCallback(
+            (text: string) => {
+                dispatch(addCommentForArticle(text))
+            },
+            [dispatch],
+        )
 
-  useInitialEffect(() => {
-    dispatch(fetchCommentsByArticleId(id))
-  })
+        useInitialEffect(() => {
+            dispatch(fetchCommentsByArticleId(id))
+        })
 
-  return (
-    <VStack gap={'16'} max className={classNames('', {}, [className])}>
-      <Text size={TextSize.L} title={t('Комментарии')} className={cls.commentTitle} />
-      <Suspense fallback={<Loader/>}>
-        <AddNewComment onSendComment={onSendComment}/>
-      </Suspense>
-      <CommentList isLoading={commentsIsLoading} comments={comments}/>
-    </VStack>
-  )
-})
+        return (
+            <VStack gap={'16'} max className={classNames('', {}, [className])}>
+                <Text
+                    size={TextSize.L}
+                    title={t('Комментарии')}
+                    className={cls.commentTitle}
+                />
+                <Suspense fallback={<Loader />}>
+                    <AddNewComment onSendComment={onSendComment} />
+                </Suspense>
+                <CommentList
+                    isLoading={commentsIsLoading}
+                    comments={comments}
+                />
+            </VStack>
+        )
+    },
+)
 
 ArticleDetailsComments.displayName = 'ArticleDetailsComments'

@@ -7,11 +7,13 @@ import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDe
 import ArticleEditPage from './ArticleEditPage'
 
 export default {
-  title: 'pages/ArticleEditPage',
-  component: ArticleEditPage
+    title: 'pages/ArticleEditPage',
+    component: ArticleEditPage,
 } as ComponentMeta<typeof ArticleEditPage>
 
-const Template: ComponentStory<typeof ArticleEditPage> = (args) => <ArticleEditPage {...args} />
+const Template: ComponentStory<typeof ArticleEditPage> = (args) => (
+    <ArticleEditPage {...args} />
+)
 
 export const Normal = Template.bind({})
 Normal.args = {}

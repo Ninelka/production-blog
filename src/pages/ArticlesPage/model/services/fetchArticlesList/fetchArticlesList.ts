@@ -3,26 +3,28 @@ import { createAsyncThunk } from '@reduxjs/toolkit'
 import { type ThunkConfig } from '@/app/providers/StoreProvider'
 import { type Article, ArticleType } from '@/entities/Article'
 import {
-  getArticlesOrder,
-  getArticlesSearch,
-  getArticlesSort
+    getArticlesOrder,
+    getArticlesSearch,
+    getArticlesSort,
 } from '@/features/ArticlesSortSelector'
 import { addQueryParams } from '@/shared/lib/url/addQueryParams/addQueryParams'
 
 import {
-  getArticlesPageLimit,
-  getArticlesPageNum,
-  getArticlesPageType
+    getArticlesPageLimit,
+    getArticlesPageNum,
+    getArticlesPageType,
 } from '../../selectors/articlesPageSelectors'
 
 interface FetchArticlesListProps {
-  replace?: boolean
+    replace?: boolean
 }
 
 // eslint-disable-next-line @typescript-eslint/no-invalid-void-type
-export const fetchArticlesList = createAsyncThunk<Article[], FetchArticlesListProps, ThunkConfig<string>>(
-  'articlesPage/fetchArticlesList',
-  async (args, thunkApi) => {
+export const fetchArticlesList = createAsyncThunk<
+    Article[],
+    FetchArticlesListProps,
+    ThunkConfig<string>
+>('articlesPage/fetchArticlesList', async (args, thunkApi) => {
     const { extra, rejectWithValue, getState } = thunkApi
 
     const limit = getArticlesPageLimit(getState())
@@ -33,28 +35,30 @@ export const fetchArticlesList = createAsyncThunk<Article[], FetchArticlesListPr
     const type = getArticlesPageType(getState())
 
     try {
-      addQueryParams({
-        sort, order, search, type
-      })
-      const response = await extra.api.get<Article[]>('/articles', {
-        params: {
-          _expand: 'user',
-          _limit: limit,
-          _page: page,
-          _sort: sort,
-          _order: order,
-          q: search,
-          type_like: type === ArticleType.ALL ? undefined : type
+        addQueryParams({
+            sort,
+            order,
+            search,
+            type,
+        })
+        const response = await extra.api.get<Article[]>('/articles', {
+            params: {
+                _expand: 'user',
+                _limit: limit,
+                _page: page,
+                _sort: sort,
+                _order: order,
+                q: search,
+                type_like: type === ArticleType.ALL ? undefined : type,
+            },
+        })
+
+        if (!response.data) {
+            throw new Error()
         }
-      })
 
-      if (!response.data) {
-        throw new Error()
-      }
-
-      return response.data
+        return response.data
     } catch (e) {
-      return rejectWithValue('error')
+        return rejectWithValue('error')
     }
-  }
-)
+})

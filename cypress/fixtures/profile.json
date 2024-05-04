@@ -1,11 +1,11 @@
 {
-  "id": "1",
-  "first": "test",
-  "lastname": "user",
-  "age": 23,
-  "currency": "RUB",
-  "country": "Russia",
-  "city": "Moscow",
-  "username": "testuser",
-  "avatar": "https://www.nicepng.com/png/detail/137-1379898_anonymous-headshot-icon-user-png.png"
+    "id": "1",
+    "first": "test",
+    "lastname": "user",
+    "age": 23,
+    "currency": "RUB",
+    "country": "Russia",
+    "city": "Moscow",
+    "username": "testuser",
+    "avatar": "https://www.nicepng.com/png/detail/137-1379898_anonymous-headshot-icon-user-png.png"
 }

@@ -10,6 +10,7 @@ import {
     DynamicModuleLoader,
     type ReducersList,
 } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
+import { getFeatureFlag } from '@/shared/lib/features'
 import { VStack } from '@/shared/ui/Stack'
 import { Page } from '@/widgets/Page'
 
@@ -28,6 +29,7 @@ const reducers: ReducersList = {
 
 const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
     const { id } = useParams<{ id: string }>()
+    const isArticleRatingEnabled = getFeatureFlag('isArticleRatingEnabled')
 
     if (__PROJECT__ !== 'storybook' && !id) {
         return null
@@ -41,7 +43,9 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
                 <VStack max gap={'16'}>
                     <ArticleDetailsPageHeader />
                     <ArticleDetails id={id} />
-                    <ArticleRating articleId={id ?? ''} />
+                    {isArticleRatingEnabled && (
+                        <ArticleRating articleId={id ?? ''} />
+                    )}
                     <ArticleRecommendationsList />
                     <ArticleDetailsComments id={id} />
                 </VStack>

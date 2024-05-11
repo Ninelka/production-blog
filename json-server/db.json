@@ -559,6 +559,10 @@
             "username": "admin",
             "password": "123",
             "roles": ["ADMIN"],
+            "features": {
+                "isArticleRatingEnabled": true,
+                "isCounterEnabled": true
+            },
             "avatar": "https://cdn-icons-png.flaticon.com/512/2058/2058328.png"
         },
         {
@@ -566,6 +570,10 @@
             "username": "user",
             "password": "123",
             "roles": ["USER"],
+            "features": {
+                "isArticleRatingEnabled": false,
+                "isCounterEnabled": true
+            },
             "avatar": "https://cdn-icons-png.flaticon.com/512/2058/2058328_broken.png"
         },
         {
@@ -573,6 +581,10 @@
             "username": "manager",
             "password": "123",
             "roles": ["MANAGER"],
+            "features": {
+                "isArticleRatingEnabled": true,
+                "isCounterEnabled": false
+            },
             "avatar": "https://cdn-icons-png.flaticon.com/512/2058/2058328.png"
         },
         {
@@ -580,6 +592,10 @@
             "username": "testuser",
             "password": "123",
             "roles": ["ADMIN"],
+            "features": {
+                "isArticleRatingEnabled": false,
+                "isCounterEnabled": false
+            },
             "avatar": "https://cdn-icons-png.flaticon.com/512/2058/2058328.png"
         }
     ],

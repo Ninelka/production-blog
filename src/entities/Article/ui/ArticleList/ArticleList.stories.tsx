@@ -44,6 +44,9 @@ List.args = {
     isLoading: false,
     view: ArticleView.LIST,
 }
+List.parameters = {
+    loki: { skip: true },
+}
 
 export const ListLoading = Template.bind({})
 ListLoading.args = {

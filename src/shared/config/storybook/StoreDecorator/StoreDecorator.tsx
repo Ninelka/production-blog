@@ -18,9 +18,9 @@ const defaultAsyncReducers: ReducersList = {
     scrollSave: scrollSaveReducer,
 }
 
-// eslint-disable-next-line react/display-name
 export const StoreDecorator =
     (state: DeepPartial<StateSchema>, asyncReducers?: ReducersList) =>
+    // eslint-disable-next-line react/display-name
     (StoryComponent: Story) =>
         (
             <StoreProvider

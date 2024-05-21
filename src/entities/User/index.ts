@@ -8,3 +8,5 @@ export {
 } from './model/selectors/roleSelectors'
 export type { UserSchema, User } from './model/types/user'
 export { UserRole } from './model/types/user'
+export { saveJsonSettings } from './model/services/saveJsonSettings'
+export { useJsonSettings } from './model/selectors/jsonSettings'

@@ -25,6 +25,9 @@ Grid.args = {
     isLoading: false,
     view: ArticleView.GRID,
 }
+Grid.parameters = {
+    loki: { skip: true },
+}
 
 export const GridLoading = Template.bind({})
 GridLoading.args = {

@@ -4,7 +4,7 @@ import { type ThunkConfig } from '@/app/providers/StoreProvider'
 import { USER_LOCALSTORAGE_KEY } from '@/shared/const/localStorage'
 
 import { getUserDataByIdQuery } from '../../api/userApi'
-import { type User } from '../types/User'
+import { type User } from '../types/user'
 
 // eslint-disable-next-line @typescript-eslint/no-invalid-void-type
 export const initAuthData = createAsyncThunk<User, void, ThunkConfig<string>>(

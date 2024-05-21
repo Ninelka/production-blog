@@ -18,7 +18,17 @@ const Template: ComponentStory<typeof ArticlesPage> = (args) => (
 
 export const Normal = Template.bind({})
 Normal.args = {}
-Normal.decorators = [StoreDecorator({})]
+Normal.decorators = [
+    StoreDecorator({
+        user: {
+            authData: {
+                jsonSettings: {
+                    isArticlesPageWasOpened: true,
+                },
+            },
+        },
+    }),
+]
 Normal.parameters = {
     mockData: [
         {

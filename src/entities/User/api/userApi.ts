@@ -10,7 +10,7 @@ interface SetJsonSettingsArgs {
 
 const userApi = rtkApi.injectEndpoints({
     endpoints: (build) => ({
-        jsonSettings: build.mutation<User, SetJsonSettingsArgs>({
+        setJsonSettings: build.mutation<User, SetJsonSettingsArgs>({
             query: ({ userId, jsonSettings }) => ({
                 url: '/users/' + userId,
                 method: 'PATCH',
@@ -19,7 +19,15 @@ const userApi = rtkApi.injectEndpoints({
                 },
             }),
         }),
+        getUserDataById: build.query<User, string>({
+            query: (userId) => ({
+                url: '/users/' + userId,
+                method: 'GET',
+            }),
+        }),
     }),
 })
 
-export const setJsonSettingsMutation = userApi.endpoints.jsonSettings.initiate
+export const setJsonSettingsMutation =
+    userApi.endpoints.setJsonSettings.initiate
+export const getUserDataByIdQuery = userApi.endpoints.getUserDataById.initiate

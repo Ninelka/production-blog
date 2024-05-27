@@ -45,6 +45,7 @@ module.exports = {
                     'gap',
                     'as',
                     'border',
+                    'feature',
                 ],
             },
         ],
@@ -129,4 +130,4 @@ module.exports = {
             },
         },
     ],
-};
+}
